@@ -171,12 +171,13 @@
             <h2 class="section-title">Contacto</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input">
-                    <input type="mail" placeholder="Email" class="contact__input">
+                <form action="" id="form" class="contact__form">
+                    <input type="text" placeholder="Name" name="name" class="contact__input">
+                    <input type="mail" placeholder="Email" name="email" class="contact__input">
                     <textarea name="message" cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="button" value="Enviar" class="contact__button button">
+                    <button type="submit" class="contact__button button">Enviar</button>
                 </form>
+                <a href="mailto:diegooviedo155@gmail.com" id="mailto">mail</a>
             </div>
         </section>
     </main>
@@ -198,6 +199,9 @@
 
     <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
+
+
+    <script src="assets/js/contact.js"></script>
 </body>
 
 </html>
