@@ -34,6 +34,15 @@
                     <li class="nav__item"><a href="#skills" class="nav__link">Tecnologías</a></li>
                     <li class="nav__item"><a href="#work" class="nav__link">Proyectos</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contacto</a></li>
+                    <li class="nav__item nav__item-color">
+                        <a href="#" class="nav__link">Color</a>
+                        <ul class="nav__item__nesting" id="toggle-color">
+                            <li class="nav__item__inside"><div data-color="#4070F4" class="nav__item__inside-color nav__item-blue">Azul</div></li>
+                            <li class="nav__item__inside"><div data-color="#40aa5edb" class="nav__item__inside-color nav__item-green">Verde</div></li>
+                            <li class="nav__item__inside"><div data-color="#a270f3" class="nav__item__inside-color nav__item-purple">Violeta</div></li>
+                            <li class="nav__item__inside"><div data-color="#f8a83ffc" class="nav__item__inside-color nav__item-orange">Naranja</div></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
@@ -50,16 +59,19 @@
                 <h1 class="home__title">Hola,<br>Soy <span class="home__title-color">Diego</span><br> Frontend Developer</h1>
 
                 <a href="https://drive.google.com/file/d/15olFd1aWFLX6F85Cle0Sz4zxOvNtRALn/view?usp=sharing" target="_blank" class="button">Descargar CV</a>
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/diego-alejandro-oviedo/" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/diegooviedo155" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                </div>
+    
             </div>
-
-            <div class="home__social">
-                <a href="https://www.linkedin.com/in/diego-alejandro-oviedo/" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/diegooviedo155" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-            </div>
-
             <div class="home__img">
-                <img src="assets/img/perfil.png" alt="">
+                <div class="home__img-bg">
+                    <img src="assets/img/perfil.png" alt="logo-perfil">
+
+                </div>
             </div>
+
         </section>
 
         <!--===== ABOUT =====-->
@@ -227,6 +239,9 @@
 
 
     <script src="assets/js/contact.js"></script>
+
+    <!--===== MENU COLORS JS =====-->
+    <script src="assets/js/menu-color.js"></script>
 </body>
 
 </html>
