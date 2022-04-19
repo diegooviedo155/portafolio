@@ -1,5 +1,4 @@
 /*===== GOOGLE FONTS =====*/
-/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 /*===== VARIABLES CSS =====*/
 :root {
@@ -172,6 +171,15 @@ img {
 }
 .nav__item div {
   cursor: pointer;
+  padding-bottom: 1rem;
+}
+.nav__item__nesting {
+  display: grid;
+  position: unset;
+  width: 100%;
+  padding: 3px 6px;
+  transform: translateY(0);
+  color: var(--second-color);
 }
 .nav__link {
   position: relative;
@@ -250,17 +258,12 @@ img {
   color: var(--first-color);
 }
 .home__img {
-  margin: 0 0 5rem 2rem;
-}
-
-.home__img {
-  margin: 0 0 2rem 2.5rem;
-  width: 80%;
+  width: 75%;
+  margin-left: 2rem;
 }
 .home__img-bg {
   background-color: var(--first-color);
   border-radius: 50%;
-  margin-left: 1rem;
   padding: 90px 0;
   transform: rotate(45deg);
   width: 80%;

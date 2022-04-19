@@ -1,6 +1,4 @@
 /*===== GOOGLE FONTS =====*/
-/*===== GOOGLE FONTS =====*/
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /*===== VARIABLES CSS =====*/
@@ -172,6 +170,7 @@ img {
 
 .nav {
     height: var(--header-height);
+    // margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -192,6 +191,19 @@ img {
         margin-bottom: var(--mb-4);
         div{
             cursor: pointer;
+            padding-bottom: 1rem;
+        }
+        &__nesting{
+            display: grid;
+            position: unset;
+            width: 100%;
+            padding:3px 6px ;
+            transform: translateY(0);
+            color: var(--second-color);
+            // color: var(--white);
+
+            // background-color:red;
+            // bottom: -30px;
         }
     }
     &__link {
@@ -279,26 +291,28 @@ img {
         }
     }
     &__img{
-        margin:0 0 5rem 2rem;
-
+        // align-items: center;
+        // margin:0 0 5rem 2rem;
+        width:75%;
+        margin-left: 2rem;
+        &-bg{
+            background-color: var(--first-color);
+            border-radius: 50%;
+            // margin-left: 1rem;
+            padding: 90px 0;
+            transform: rotate(45deg);
+            width: 80%;
+        }
+        img{
+            transform: rotate(-45deg);
+        }
     }
     
 }
-.home__img{
-    margin:0 0 2rem 2.5rem;
-    width:80%;
-    &-bg{
-        background-color: var(--first-color);
-        border-radius: 50%;
-        margin-left: 1rem;
-        padding: 90px 0;
-        transform: rotate(45deg);
-        width: 80%;
-    }
-    img{
-        transform: rotate(-45deg);
-    }
-}
+// .home__img{
+//     // margin: ;
+    
+// }
 
 /*BUTTONS*/
 
@@ -511,6 +525,7 @@ img {
                 padding:3px 6px ;
                 transform: translateY(100%);
                 background-color: rgba(0, 0, 0, 0.152);
+
             }
             &__inside{
                 &-color{
@@ -563,6 +578,7 @@ img {
             align-items:center;
         }
     }
+    
     .about {
         &__container {
             grid-template-columns: repeat(2, 1fr);

@@ -1,8 +1,8 @@
 const darkMode = document.getElementById('darkMode');
-console.log(darkMode.classList);
+// console.log(darkMode.classList);
 
 const logo = document.getElementById('logo');
-console.log(logo.attributes.src.nodeValue);
+// console.log(logo.attributes.src.nodeValue);
 
 darkMode.addEventListener("click", (e)=>{
     darkMode.classList.forEach((res)=>{
