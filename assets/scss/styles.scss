@@ -85,7 +85,7 @@ p {
 }
 
 ul {
-    margin: 0;
+    margin: 1rem 0;
     padding: 0;
     list-style: none;
 }
@@ -186,12 +186,15 @@ img {
             background-color: var(--second-color);
             transition: .5s;
         }
+        .nav__item i, .nav__item__inside{
+            color: var(--white);
+        }
     }
     &__item {
         margin-bottom: var(--mb-4);
         div{
             cursor: pointer;
-            padding-bottom: 1rem;
+            // padding-bottom: 1rem;
         }
         &__nesting{
             display: grid;
@@ -475,6 +478,9 @@ img {
     body {
         margin: 0;
     }
+    ul{
+        margin: 0;
+    }
     .section {
         padding-top: 4rem;
         padding-bottom: 3rem;
@@ -501,15 +507,18 @@ img {
         height: calc(var(--header-height) + 1rem);
         &__list {
             display: flex;
+            align-items: center;
             padding-top: 0;
         }
         &__item {
             margin-left: var(--mb-4);
             margin-bottom: 0;
             transition: transform .5s;
+            
             &-color{
-                position: relative;
-                height: 100%;
+                // position: relative;
+                // // height: 100%;
+                padding:0;
                 --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
                 &:hover{
                     --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -520,7 +529,7 @@ img {
                 transition: clip-path .3s;
                 clip-path: var(--clip);
                 position: absolute;
-                bottom: -30px;
+                bottom: -5px;
                 width: max-content;
                 padding:3px 6px ;
                 transform: translateY(100%);
@@ -555,6 +564,14 @@ img {
         &__link {
             color: var(--second-color);
         }
+        &__menu{
+            
+            .nav__item i, .nav__item__inside{
+            color: var(--second-color);
+            // margin-top:1rem;
+            }
+
+        }
     }
     .home {
         display: flex;
@@ -578,6 +595,7 @@ img {
             align-items:center;
         }
     }
+
     
     .about {
         &__container {
