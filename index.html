@@ -34,10 +34,11 @@
 
     <meta name="theme-color" content="#4070F4">
 
-    <link rel="stylesheet" href="assets/css/styles.css">
-
     <!-- =====BOX ICONS===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Estilos propios: cargan después para poder sobrescribir estilos de librerías -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- Datos estructurados (SEO) -->
     <script type="application/ld+json">
@@ -149,7 +150,7 @@
         <section class="about section" id="about">
             <div class="about__container bd-grid">
                 <div class="about__img">
-                    <img src="assets/img/about.jpg" alt="Diego Oviedo, Full Stack Developer" loading="lazy" width="240" height="240">
+                    <img src="assets/img/profile-photo.jpg" alt="Diego Oviedo, Full Stack Developer" loading="lazy" width="300" height="400">
                 </div>
 
                 <div>
@@ -256,6 +257,29 @@
                         </div>
                     </div>
                 </a>
+
+                <div class="work__secondary" style="grid-column: 1 / -1;">
+                    <p class="work__secondary-label">Otros proyectos</p>
+
+                    <a href="https://shopping-list-hazel-six.vercel.app" target="_blank" class="project-card project-card--compact">
+                        <div class="project-card__img">
+                            <img src="assets/img/work-loquefalta.jpg" alt="Lo Que Falta, app de lista de compras" loading="lazy">
+                            <span class="project-card__badge">Lo Que Falta</span>
+                            <span class="project-card__arrow"><i class='bx bx-right-arrow-alt'></i></span>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__desc">PWA para gestionar listas de compras por categorías, con autenticación (email y OAuth), sincronización en tiempo real y modo demo sin backend. Arquitectura de componentes en Atomic Design, con tests.</p>
+                            <div class="project-card__tags">
+                                <span class="tag">Next.js</span>
+                                <span class="tag">React 19</span>
+                                <span class="tag">Supabase</span>
+                                <span class="tag">Zustand</span>
+                                <span class="tag">Jest</span>
+                                <span class="tag">PWA</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
                 <div class="work__more" style="grid-column: 1 / -1;">
                     <a href="https://github.com/diegooviedo155" target="_blank" class="button button--ghost">Más proyectos en GitHub <i class='bx bxl-github'></i></a>

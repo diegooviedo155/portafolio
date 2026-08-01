@@ -370,11 +370,13 @@ button {
   justify-content: center;
   width: 2.4rem;
   height: 2.4rem;
+  line-height: 1;
   border-radius: var(--radius-full);
   font-size: 1.05rem;
   cursor: pointer;
   color: var(--text);
   transition: background 0.25s ease;
+  flex: none;
 }
 .nav__theme-toggle:hover {
   background: var(--surface-2);
@@ -382,6 +384,18 @@ button {
 .nav i {
   cursor: pointer;
   color: var(--text);
+}
+
+/*Máxima especificidad: garantiza que este ícono gane pase lo que pase
+  con el orden de carga de la librería de íconos (boxicons)*/
+#darkMode.nav__theme-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.4rem !important;
+  height: 2.4rem !important;
+  line-height: 1 !important;
+  font-size: 1.05rem !important;
 }
 
 /*Active mobile menu*/
@@ -653,6 +667,17 @@ button {
   text-align: center;
   margin-top: var(--mb-2);
 }
+.work__secondary {
+  margin-top: var(--mb-2);
+}
+.work__secondary-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-bold);
+  color: var(--text-muted);
+  margin-bottom: var(--mb-3);
+}
 
 .project-card {
   position: relative;
@@ -732,7 +757,29 @@ button {
   flex-wrap: wrap;
   gap: 0.4rem;
 }
+.project-card--compact .project-card__body {
+  padding: var(--mb-3) var(--mb-4);
+}
+.project-card--compact .project-card__desc {
+  margin-bottom: var(--mb-2);
+}
 
+@media screen and (min-width: 768px) {
+  .project-card--compact {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    align-items: stretch;
+  }
+  .project-card--compact .project-card__img {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+  .project-card--compact .project-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 /*===== CONTACT =====*/
 .contact__container {
   row-gap: var(--mb-5);
