@@ -1,25 +1,21 @@
+/*===== DARK MODE (theme class + persisted preference) =====*/
 const darkMode = document.getElementById('darkMode');
-// console.log(darkMode.classList);
-
 const logo = document.getElementById('logo');
-// console.log(logo.attributes.src.nodeValue);
+const root = document.documentElement;
 
-darkMode.addEventListener("click", (e)=>{
-    darkMode.classList.forEach((res)=>{
-        if(res === 'fa-moon'){
-            rootStyle.setProperty('--second-color', 'rgba(255, 255, 255, 0.781)');
-            rootStyle.setProperty('--white', 'rgba(50, 49, 68, 0.781)');
-            darkMode.classList.add('fa-sun');
-            darkMode.classList.remove('fa-moon');
-            logo.attributes.src.nodeValue = './assets/img/logo2.png';
-        }
-        if(res === 'fa-sun'){
-            rootStyle.setProperty('--second-color', '#282d30');
-            rootStyle.setProperty('--white', 'rgba(255, 255, 255, 0.781)');
-            darkMode.classList.add('fa-moon');
-            darkMode.classList.remove('fa-sun');
-            logo.attributes.src.nodeValue = './assets/img/logo.png';
-        }
-    })
+const applyTheme = (isDark) => {
+    root.classList.toggle('dark-theme', isDark);
+    darkMode.classList.toggle('bx-moon', !isDark);
+    darkMode.classList.toggle('bx-sun', isDark);
+    if (logo) logo.setAttribute('src', isDark ? './assets/img/logo2.png' : './assets/img/logo.png');
+};
 
+const stored = localStorage.getItem('theme');
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(stored ? stored === 'dark' : prefersDark);
+
+darkMode.addEventListener('click', () => {
+    const isDark = !root.classList.contains('dark-theme');
+    applyTheme(isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });

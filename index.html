@@ -1,51 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Oviedo · Full Stack Developer (Angular, NestJS, React)</title>
+    <meta name="description" content="Portfolio de Diego Oviedo, Full Stack Developer en Argentina especializado en Angular, NestJS, React e Ionic. Más de 4 años de experiencia, ex Team Lead de 15 devs, creador de Golero y Fynta.">
+    <meta name="keywords" content="Diego Oviedo, Full Stack Developer, Angular Developer, NestJS, React Developer, Ionic, desarrollador web Argentina, frontend developer">
+    <meta name="author" content="Diego Oviedo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://portafolio-diego-oviedo.netlify.app/">
+
+    <!-- Favicons -->
     <link rel="icon" href="./assets/img/logo2.png">
+    <link rel="apple-touch-icon" href="./assets/img/logo2.png">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portafolio-diego-oviedo.netlify.app/">
+    <meta property="og:title" content="Diego Oviedo · Full Stack Developer">
+    <meta property="og:description" content="Full Stack Developer en Argentina especializado en Angular, NestJS, React e Ionic. Ex Team Lead de 15 devs, creador de Golero y Fynta.">
+    <meta property="og:image" content="https://portafolio-diego-oviedo.netlify.app/assets/img/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Diego Oviedo — Portfolio">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Diego Oviedo · Full Stack Developer">
+    <meta name="twitter:description" content="Full Stack Developer en Argentina especializado en Angular, NestJS, React e Ionic. Creador de Golero y Fynta.">
+    <meta name="twitter:image" content="https://portafolio-diego-oviedo.netlify.app/assets/img/og-cover.jpg">
+
+    <meta name="theme-color" content="#4070F4">
+
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- =====BOX ICONS===== -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <!-- =====FONT AWESOME ICONS===== -->
-    <script src="https://kit.fontawesome.com/eab1abc9dd.js" crossorigin="anonymous"></script>
-    <title>Portfolio Diego Oviedo</title>
+    <!-- Datos estructurados (SEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Diego Oviedo",
+        "alternateName": "Diego Alejandro Oviedo",
+        "jobTitle": "Full Stack Developer",
+        "description": "Full Stack Developer especializado en Angular, NestJS, React e Ionic.",
+        "url": "https://portafolio-diego-oviedo.netlify.app/",
+        "image": "https://portafolio-diego-oviedo.netlify.app/assets/img/og-cover.jpg",
+        "email": "mailto:diegooviedo155@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "AR"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/diego-alejandro-oviedo/",
+            "https://github.com/diegooviedo155"
+        ],
+        "knowsAbout": ["Angular", "NestJS", "React", "Node.js", "Ionic", "TypeScript", "Next.js"]
+    }
+    </script>
+
+    <!-- Evita el flash del tema equivocado al cargar -->
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (stored ? stored === 'dark' : prefersDark) {
+                document.documentElement.classList.add('dark-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body>
     <!--===== HEADER =====-->
     <header class="l-header">
         <nav class="nav bd-grid">
-            <div>
-                <a href="#">
-                    <img id="logo" src="./assets/img/logo.png" class="logotipo">
+            <div class="nav__brand">
+                <a href="#home">
+                    <img id="logo" src="./assets/img/logo.png" class="logotipo" alt="Logo Diego Oviedo">
                 </a>
-            </div>
-            <div>
-                <a href="#" class="nav__logo">Diego Alejandro Oviedo</a>
-
+                <a href="#home" class="nav__logo">Diego Oviedo</a>
             </div>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active">Inicio</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">¿Quién soy?</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">Sobre mí</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Tecnologías</a></li>
                     <li class="nav__item"><a href="#work" class="nav__link">Proyectos</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contacto</a></li>
-                    <li class="nav__item nav__item-color">
-                        <div class="nav__link">Color</div>
+                    <li class="nav__item nav__item-color" id="color-picker">
+                        <div class="nav__link nav__item__color-trigger" id="color-trigger">Color</div>
                         <ul class="nav__item__nesting" id="toggle-color">
-                            <li class="nav__item__inside"><div data-color="#4070F4" class="nav__item__inside-color nav__item-blue">Azul</div></li>
-                            <li class="nav__item__inside"><div data-color="#40aa5edb" class="nav__item__inside-color nav__item-green">Verde</div></li>
-                            <li class="nav__item__inside"><div data-color="#a270f3" class="nav__item__inside-color nav__item-purple">Violeta</div></li>
-                            <li class="nav__item__inside"><div data-color="#f8a83ffc" class="nav__item__inside-color nav__item-orange">Naranja</div></li>
+                            <li class="nav__item__inside"><div data-color="#4070F4" data-color2="#7C3AED" class="nav__item__inside-color nav__item-blue" title="Azul"></div></li>
+                            <li class="nav__item__inside"><div data-color="#22B07D" data-color2="#0EA5E9" class="nav__item__inside-color nav__item-green" title="Verde"></div></li>
+                            <li class="nav__item__inside"><div data-color="#A270F3" data-color2="#EC4899" class="nav__item__inside-color nav__item-purple" title="Violeta"></div></li>
+                            <li class="nav__item__inside"><div data-color="#F8A83F" data-color2="#EF4444" class="nav__item__inside-color nav__item-orange" title="Naranja"></div></li>
                         </ul>
                     </li>
-                    <li class="nav__item"><i id="darkMode" class="fa-solid fa-moon"></i></li>
+                    <li class="nav__item"><i id="darkMode" class="bx bx-moon nav__theme-toggle" title="Cambiar tema"></i></li>
                 </ul>
             </div>
 
@@ -59,189 +116,224 @@
         <!--===== HOME =====-->
         <section class="home bd-grid" id="home">
             <div class="home__data">
-                <h1 class="home__title">Hola,<br>Soy <span class="home__title-color">Diego</span><br> Frontend Developer</h1>
+                <div class="home__eyebrow"><span class="dot"></span> Disponible para nuevos proyectos</div>
 
-                <a href="https://drive.google.com/file/d/1pd5R9buRPNUW7NTsoo0BgJu-nBZyqFCg/view?usp=sharing" target="_blank" class="button">Descargar CV</a>
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/diego-alejandro-oviedo/" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://github.com/diegooviedo155" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                <h1 class="home__title">Hola, soy Diego.<br>Full Stack con <span class="home__title-color">Angular, NestJS y React</span></h1>
+
+                <p class="home__text">Más de 4 años de experiencia en frontend, hoy enfocado en full stack. Construyo Fynta y Golero, dos productos propios de punta a punta, y antes lideré un equipo de 15 desarrolladores en Eldar.</p>
+
+                <div class="home__cta">
+                    <a href="#work" class="button">Ver proyectos <i class='bx bx-right-arrow-alt'></i></a>
+                    <a href="./assets/cv/CV-Diego-Oviedo.pdf" target="_blank" class="button button--ghost">Descargar CV</a>
                 </div>
-    
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/diego-alejandro-oviedo/" target="_blank" class="home__social-icon" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/diegooviedo155" target="_blank" class="home__social-icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                </div>
+
+                <div class="home__meta">
+                    <span>2026</span>
+                    <span>Argentina</span>
+                    <span>Full Stack Developer</span>
+                </div>
             </div>
             <div class="home__img">
                 <div class="home__img-bg">
-                    <img src="assets/img/perfil.png" alt="logo-perfil">
+                    <img src="assets/img/perfil.png" alt="Diego Oviedo">
                 </div>
             </div>
-
         </section>
 
         <!--===== ABOUT =====-->
-        <section class="about section " id="about">
-            <h2 class="section-title">Sobre mi</h2>
-
+        <section class="about section" id="about">
             <div class="about__container bd-grid">
                 <div class="about__img">
-                    <img src="assets/img/about.jpg" alt="">
+                    <img src="assets/img/about.jpg" alt="Diego Oviedo, Full Stack Developer" loading="lazy" width="240" height="240">
                 </div>
 
                 <div>
-                    <h2 class="about__subtitle">Yo soy Diego</h2>
-                    <p class="about__text">Programador enfocado y especializado en las tecnologías sobre el lenguaje Javascript. Graduado de la Universidad de San Martin, como técnico en redes informáticas. Listo para afrontar nuevos retos y desafios que me permitan crecer
-                        personal como profesionalmente.</p>
+                    <div class="about__eyebrow eyebrow">Sobre mí</div>
+                    <h2 class="section-title about__title">De frontend a full stack, sin perder profundidad</h2>
+
+                    <div class="about__stats">
+                        <div class="about__stat"><strong>4+</strong><span>años de experiencia</span></div>
+                        <div class="about__stat"><strong>15</strong><span>devs liderados</span></div>
+                        <div class="about__stat"><strong>2</strong><span>productos propios</span></div>
+                    </div>
+
+                    <p class="about__text">Programador especializado en el ecosistema de JavaScript/TypeScript, hoy enfocado en Angular y NestJS/Node.js. En Eldar (2022–2026) trabajé en proyectos de medios de pago y entretenimiento, fui Team Lead de un equipo de 15 desarrolladores frontend, creé un design system corporativo con StencilJS y lideré la migración incremental de React a Angular con microfrontends. Actualmente construyo Fynta (facturación electrónica) y Golero (reservas deportivas), dos SaaS propios de punta a punta. Graduado como Técnico en Redes Informáticas (UNSAM), listo para el próximo desafío.</p>
                 </div>
             </div>
         </section>
 
         <!--===== SKILLS =====-->
         <section class="skills section" id="skills">
-            <h2 class="section-title">Tecnologías</h2>
+            <div class="skills__container bd-grid section--center">
+                <div class="skills__eyebrow eyebrow">Tecnologías</div>
+                <h2 class="section-title skills__title">Con qué construyo</h2>
+                <p class="section-subtitle skills__text">Full stack con foco en Angular y NestJS/Node.js, complementado con React, Ionic y el resto del stack moderno de JavaScript.</p>
 
-            <div class="skills__container bd-grid">
-                <div>
-                    <h2 class="skills__subtitle">Profesional Skills</h2>
-                    <p class="skills__text">Estoy enfocado en aprender las tecnologías sobre el lenguaje Javascript, entusiasta, estudiante, organizado. Desarrollandome en el Stack MENR. Ademas de estas tecnologias, hice otros sobre Python, Tester QA y testing automation con
-                        selenium.
-                    </p>
-                </div>
+                <div class="skills__groups">
+                    <div class="skills__group">
+                        <div class="skills__group-title"><i class='bx bx-server'></i> Backend</div>
+                        <div class="skills__chips">
+                            <span class="chip"><i class='bx bxl-nodejs'></i> Node.js</span>
+                            <span class="chip"><i class='bx bx-cube'></i> NestJS</span>
+                            <span class="chip"><i class='bx bx-data'></i> PostgreSQL</span>
+                            <span class="chip"><i class='bx bx-cloud'></i> Supabase</span>
+                            <span class="chip"><i class='bx bx-check-shield'></i> Zod</span>
+                            <span class="chip"><i class='bx bx-plug'></i> REST APIs</span>
+                        </div>
+                    </div>
 
-                <div class="skills__container-icons">
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">HTML5</span>
-                            <i class='bx bxl-html5 skills__icon'></i>
+                    <div class="skills__group">
+                        <div class="skills__group-title"><i class='bx bx-window'></i> Frontend</div>
+                        <div class="skills__chips">
+                            <span class="chip"><i class='bx bxl-angular'></i> Angular</span>
+                            <span class="chip"><i class='bx bxl-react'></i> React</span>
+                            <span class="chip"><i class='bx bx-layer'></i> Next.js</span>
+                            <span class="chip"><i class='bx bxl-typescript'></i> TypeScript</span>
+                            <span class="chip"><i class='bx bx-mobile-alt'></i> Ionic</span>
+                            <span class="chip"><i class='bx bxl-tailwind-css'></i> Tailwind CSS</span>
                         </div>
                     </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">CSS3</span>
-                            <i class='bx bxl-css3 skills__icon'></i>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">Javascript</span>
-                            <i class='bx bxl-javascript skills__icon'></i>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">React</span>
-                            <i class='bx bxl-react skills__icon'></i>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">NodeJS</span>
-                            <i class='bx bxl-nodejs skills__icon'></i>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">Sass</span>
-                            <i class='bx bxl-sass skills__icon'></i>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">Git</span>
-                            <i class='bx bxl-git skills__icon'></i>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">Github</span>
-                            <i class='bx bxl-github skills__icon'></i>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">Bootstrap</span>
-                            <i class='bx bxl-bootstrap skills__icon'></i>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <span class="skills__name">Redux</span>
-                            <i class='bx bxl-redux skills__icon'></i>
+
+                    <div class="skills__group">
+                        <div class="skills__group-title"><i class='bx bx-wrench'></i> Herramientas</div>
+                        <div class="skills__chips">
+                            <span class="chip"><i class='bx bxl-git'></i> Git</span>
+                            <span class="chip"><i class='bx bxl-github'></i> GitHub</span>
+                            <span class="chip"><i class='bx bx-sitemap'></i> Nx (monorepo)</span>
+                            <span class="chip"><i class='bx bx-repeat'></i> Scrum</span>
+                            <span class="chip"><i class='bx bxl-sass'></i> Sass</span>
+                            <span class="chip"><i class='bx bx-group'></i> Liderazgo de equipos</span>
                         </div>
                     </div>
                 </div>
-
+            </div>
         </section>
 
         <!--===== WORK =====-->
         <section class="work section" id="work">
-            <h2 class="section-title">Proyectos</h2>
-
             <div class="work__container bd-grid">
-                <div class="work__img">
-                    <a href="https://diegooviedo155.github.io/conversor-monedas/" target="_blank">
-                        <img src="assets/img/work1.jpg" alt="">
-                    </a>
+                <div style="grid-column: 1 / -1;" class="section--center">
+                    <div class="work__eyebrow eyebrow">Proyectos</div>
+                    <h2 class="section-title work__title">Lo que estoy construyendo</h2>
+                    <p class="section-subtitle work__text">Dos productos propios, de punta a punta: diseño, desarrollo, pagos y despliegue.</p>
+                </div>
 
-                </div>
-                <div class="work__img">
-                    <a href="https://app-notes-crud.herokuapp.com/" target="_blank">
-                        <img src="assets/img/work2.jpg" alt="">
-                    </a>
-                </div>
-                <div class="work__img">
-                    <a href="https://clonflix.netlify.app/" target="_blank">
-                        <img src="assets/img/work3.jpg" alt="">
-                    </a>
-                </div>
-                <div class="work__img">
-                    <a href="https://certifica2.netlify.app/" target="_blank">
-                        <img src="assets/img/work4.jpg" alt="">
-                    </a>
-                </div>
-                <div class="work__img">
-                    <img src="assets/img/work5.jpg" alt="">
-                </div>
-                <div class="work__img">
-                    <img src="assets/img/work6.jpg" alt="">
+                <a href="https://golero.com.ar" target="_blank" class="project-card">
+                    <div class="project-card__img">
+                        <img src="assets/img/work-golero.jpg" alt="Captura de Golero, plataforma de reservas de canchas deportivas en Argentina" loading="lazy">
+                        <span class="project-card__badge">Golero</span>
+                        <span class="project-card__arrow"><i class='bx bx-right-arrow-alt'></i></span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__desc">Plataforma de reservas de canchas deportivas en Argentina: buscá clubes cerca tuyo, reservá con confirmación inmediata y pagá con Mercado Pago.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Mercado Pago</span>
+                            <span class="tag">SEO</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://fynta.app" target="_blank" class="project-card">
+                    <div class="project-card__img">
+                        <img src="assets/img/work-fynta.jpg" alt="Captura de Fynta, SaaS de facturación electrónica para monotributistas argentinos" loading="lazy">
+                        <span class="project-card__badge">Fynta</span>
+                        <span class="project-card__arrow"><i class='bx bx-right-arrow-alt'></i></span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__desc">SaaS de facturación electrónica para monotributistas argentinos: emisión con CAE, control de tope de categoría y alertas preventivas.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">NestJS</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">React Native</span>
+                            <span class="tag">Supabase</span>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="work__more" style="grid-column: 1 / -1;">
+                    <a href="https://github.com/diegooviedo155" target="_blank" class="button button--ghost">Más proyectos en GitHub <i class='bx bxl-github'></i></a>
                 </div>
             </div>
         </section>
 
         <!--===== CONTACT =====-->
         <section class="contact section" id="contact">
-            <h2 class="section-title">Contacto</h2>
-
             <div class="contact__container bd-grid">
-                <form action="" id="form" class="contact__form">
-                    <input type="text" placeholder="Name" name="name" class="contact__input">
-                    <input type="mail" placeholder="Email" name="email" class="contact__input">
-                    <textarea name="message" cols="0" rows="10" class="contact__input"></textarea>
-                    <button type="submit" class="contact__button button">Enviar</button>
-                </form>
-                <a href="mailto:diegooviedo155@gmail.com" id="mailto">mail</a>
+                <div>
+                    <div class="contact__eyebrow eyebrow">Contacto</div>
+                    <h2 class="section-title contact__title">Hablemos de tu próximo proyecto</h2>
+                    <p class="section-subtitle">¿Tenés una oportunidad, un proyecto o simplemente querés charlar de tecnología? Escribime.</p>
+
+                    <form action="" id="form" class="contact__form">
+                        <input type="text" placeholder="Nombre" name="name" class="contact__input" required>
+                        <input type="email" placeholder="Email" name="email" class="contact__input" required>
+                        <textarea name="message" rows="5" placeholder="Contame en qué puedo ayudarte" class="contact__input" required></textarea>
+                        <button type="submit" class="contact__button button">Enviar mensaje <i class='bx bx-send'></i></button>
+                    </form>
+                    <a href="mailto:diegooviedo155@gmail.com" id="mailto">mail</a>
+                </div>
+
+                <div class="contact__chips">
+                    <a href="mailto:diegooviedo155@gmail.com" class="contact__chip">
+                        <i class='bx bx-envelope'></i>
+                        <div><strong>Email</strong><span>diegooviedo155@gmail.com</span></div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/diego-alejandro-oviedo/" target="_blank" class="contact__chip">
+                        <i class='bx bxl-linkedin'></i>
+                        <div><strong>LinkedIn</strong><span>/diego-alejandro-oviedo</span></div>
+                    </a>
+                    <a href="https://github.com/diegooviedo155" target="_blank" class="contact__chip">
+                        <i class='bx bxl-github'></i>
+                        <div><strong>GitHub</strong><span>@diegooviedo155</span></div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <!--===== FOOTER =====-->
     <footer class="footer">
-        <p class="footer__title">Diego Alejandro Oviedo</p>
-        <div class="footer__social">
-            <a href="https://www.facebook.com/diego.oviedo.182/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-            <a href="https://www.instagram.com/dieguito_155/?hl=es-la" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-            <a href="https://twitter.com/Dieguito0oo" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
-        </div>
-        <p>&#169; copyright all right reserved</p>
-    </footer>
+        <div class="bd-grid">
+            <div class="footer__grid">
+                <div>
+                    <p class="footer__title">Diego Oviedo</p>
+                    <p class="footer__tagline">Full Stack Developer construyendo productos con Angular, NestJS y React. Basado en Argentina.</p>
+                </div>
 
+                <div class="footer__nav">
+                    <a href="#home">Inicio</a>
+                    <a href="#about">Sobre mí</a>
+                    <a href="#skills">Tecnologías</a>
+                    <a href="#work">Proyectos</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+
+                <div>
+                    <div class="footer__social">
+                        <a href="https://www.linkedin.com/in/diego-alejandro-oviedo/" target="_blank" class="footer__icon" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/diegooviedo155" target="_blank" class="footer__icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="mailto:diegooviedo155@gmail.com" class="footer__icon" aria-label="Email"><i class='bx bx-envelope'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer__bottom">© <span id="year">2026</span> Diego Oviedo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
-
-
     <script src="assets/js/contact.js"></script>
-
     <!--===== MENU COLORS JS =====-->
     <script src="assets/js/menu-color.js"></script>
     <!--===== DARK MODE JS =====-->
