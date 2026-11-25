@@ -408,8 +408,15 @@ img {
     transform: translateY(0);
 }
 
+#mobile-drawer-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .mobile-drawer__link {
-    padding: 0.875rem 0;
+    display: block;
+    padding: 0.95rem 0;
     font-size: 1.25rem;
     font-weight: 500;
     border-bottom: 1px solid var(--border);
