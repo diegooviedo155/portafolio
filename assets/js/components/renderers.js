@@ -91,7 +91,7 @@ export function renderHero(hero) {
                     <a href="#contact" class="btn btn--secondary">
                         ${esc(hero.ctaSecondary)}
                     </a>
-                    <a href="${PROFILE_META.cvPath}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+                    <a href="${esc(hero.cvPath || PROFILE_META.cvPath)}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
                         ${ICONS.file} ${esc(hero.ctaCv)}
                     </a>
                 </div>

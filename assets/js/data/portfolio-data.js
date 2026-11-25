@@ -77,6 +77,7 @@ export const PORTFOLIO_COPY = {
             ctaPrimary: 'View Case Studies',
             ctaSecondary: 'Contact Me',
             ctaCv: 'Resume (PDF)',
+            cvPath: './assets/cv/CV-Diego-Oviedo-EN.pdf',
             specHeaderLeft: 'ENGINEERING SNAPSHOT',
             specHeaderRight: 'BUENOS AIRES · REMOTE',
             specItems: [
@@ -207,7 +208,7 @@ export const PORTFOLIO_COPY = {
                             domain: 'Architecture',
                             highlights: [
                                 'Executed incremental migration from React to Angular using microfrontends.',
-                                'Built an Angular MVP from scratch and maintained existing React applications.',
+                                'Delivered two Minimum Viable Products (MVPs) with Angular and maintained existing React applications.',
                                 'Adopted TanStack Query and Tailwind CSS for cleaner state and UI workflows.'
                             ]
                         }
@@ -435,6 +436,7 @@ export const PORTFOLIO_COPY = {
             ctaPrimary: 'Ver casos de estudio',
             ctaSecondary: 'Contactarme',
             ctaCv: 'Descargar CV',
+            cvPath: './assets/cv/CV-Diego-Oviedo-ES.pdf',
             specHeaderLeft: 'PERFIL TÉCNICO',
             specHeaderRight: 'BUENOS AIRES · REMOTO',
             specItems: [
@@ -565,7 +567,7 @@ export const PORTFOLIO_COPY = {
                             domain: 'Arquitectura',
                             highlights: [
                                 'Migración incremental de React a Angular mediante microfrontends.',
-                                'Desarrollo de MVP con Angular y mantenimiento de aplicaciones React.',
+                                'Entrega de dos productos mínimos viables (MVP) con Angular y mantenimiento de aplicaciones React.',
                                 'Adopción de TanStack Query y Tailwind CSS.'
                             ]
                         }
