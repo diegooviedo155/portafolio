@@ -426,7 +426,11 @@ export const PORTFOLIO_COPY = {
                     approach: 'Co-hosted React and Angular microfrontends behind shared routing and composition boundaries.',
                     decision: 'Migrated domain slices incrementally while keeping production systems continuously live.',
                     takeaway: 'Incremental boundaries let teams ship product features while retiring legacy modules safely.',
-                    diagram: 'Host Shell ──▶ [ MFE: Angular ] + [ MFE: React ] ──▶ Shared Routing & Auth'
+                    diagram: [
+                        { role: 'Shell', label: 'Host App & Shared Routing' },
+                        { role: 'MFEs', label: 'Angular Modules + React Modules' },
+                        { role: 'UI Layer', label: 'Shared Auth & Design Tokens' }
+                    ]
                 },
                 {
                     kicker: 'Design Systems · Web Components',
@@ -436,7 +440,11 @@ export const PORTFOLIO_COPY = {
                     approach: 'Encapsulated UI primitives as framework-agnostic Web Components compiled with Stencil.js.',
                     decision: 'Standardized on Web Components published and versioned through Nexus instead of parallel UI kits.',
                     takeaway: 'Strict versioning and standard browser primitives scale better than framework-coupled libraries.',
-                    diagram: 'Stencil.js Source ──▶ Web Components ──▶ Nexus Registry ──▶ Angular & React Apps'
+                    diagram: [
+                        { role: 'Source', label: 'Stencil.js Web Components' },
+                        { role: 'Registry', label: 'Versioned Packages in Nexus' },
+                        { role: 'Consumers', label: 'Angular & React Microfrontends' }
+                    ]
                 },
                 {
                     kicker: 'Monorepo · Type Safety',
@@ -446,7 +454,11 @@ export const PORTFOLIO_COPY = {
                     approach: 'Structured an Nx monorepo with shared TypeScript types, Zod schemas, and a typed HTTP client.',
                     decision: 'Enforced single-source validation schemas at the boundary instead of duplicating DTOs.',
                     takeaway: 'Shared contracts catch breaking changes at compile time before they reach production.',
-                    diagram: 'packages/contracts (Zod) ──┬──▶ NestJS API\n                           ├──▶ Next.js Web\n                           └──▶ React Native (Expo)'
+                    diagram: [
+                        { role: 'Contracts', label: 'Nx Workspace · Zod Schemas' },
+                        { role: 'Backend', label: 'NestJS API + Billing Provider' },
+                        { role: 'Clients', label: 'Next.js Web + React Native (Expo)' }
+                    ]
                 }
             ])
         },
@@ -834,7 +846,11 @@ export const PORTFOLIO_COPY = {
                     approach: 'Convivencia de microfrontends React y Angular bajo límites claros de ruteo y composición.',
                     decision: 'Migrar módulos por dominio de forma incremental manteniendo los sistemas en producción sin cortes.',
                     takeaway: 'Las fronteras incrementales permiten entregar valor continuo mientras se moderniza la base.',
-                    diagram: 'Host Shell ──▶ [ MFE: Angular ] + [ MFE: React ] ──▶ Ruteo y Auth compartidos'
+                    diagram: [
+                        { role: 'Shell', label: 'App Host y Ruteo Compartido' },
+                        { role: 'MFEs', label: 'Módulos Angular + Módulos React' },
+                        { role: 'Base UI', label: 'Auth y Tokens Compartidos' }
+                    ]
                 },
                 {
                     kicker: 'Design Systems · Web Components',
@@ -844,7 +860,11 @@ export const PORTFOLIO_COPY = {
                     approach: 'Encapsular primitivas UI como Web Components agnósticos compilados con Stencil.js.',
                     decision: 'Estandarizar la capa UI en Web Components publicados y versionados en Nexus en lugar de kits paralelos.',
                     takeaway: 'El versionado estricto y las primitivas estándar escalan mejor que las librerías acopladas a un framework.',
-                    diagram: 'Código Stencil.js ──▶ Web Components ──▶ Registro Nexus ──▶ Apps Angular y React'
+                    diagram: [
+                        { role: 'Origen', label: 'Stencil.js Web Components' },
+                        { role: 'Registro', label: 'Paquetes Versionados en Nexus' },
+                        { role: 'Consumo', label: 'Microfrontends Angular y React' }
+                    ]
                 },
                 {
                     kicker: 'Monorepo · Contratos Tipados',
@@ -854,7 +874,11 @@ export const PORTFOLIO_COPY = {
                     approach: 'Monorepo Nx con tipos TypeScript, esquemas Zod compartidos y cliente HTTP tipado.',
                     decision: 'Validar con una única fuente de verdad en el borde en lugar de duplicar DTOs.',
                     takeaway: 'Los contratos compartidos detectan cambios incompatibles en compilación antes de llegar a producción.',
-                    diagram: 'packages/contracts (Zod) ──┬──▶ API NestJS\n                           ├──▶ Web Next.js\n                           └──▶ Mobile React Native (Expo)'
+                    diagram: [
+                        { role: 'Contratos', label: 'Monorepo Nx · Esquemas Zod' },
+                        { role: 'Backend', label: 'API NestJS + Billing Provider' },
+                        { role: 'Clientes', label: 'Web Next.js + React Native (Expo)' }
+                    ]
                 }
             ])
         },

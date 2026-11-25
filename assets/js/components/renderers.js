@@ -494,7 +494,23 @@ export function renderEngineeringCases(casesData) {
                             <dd>${esc(item.takeaway)}</dd>
                         </div>
                     </dl>
-                    ${item.diagram ? `<pre class="eng-diagram" aria-label="Architecture flow">${esc(item.diagram)}</pre>` : ''}
+                    ${
+                        Array.isArray(item.diagram)
+                            ? `<div class="arch-diagram" aria-label="Architecture diagram">
+                                ${item.diagram
+                                    .map(
+                                        (step, idx) => `
+                                    ${idx > 0 ? '<span class="arch-diagram__arrow" aria-hidden="true">↓</span>' : ''}
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">${esc(step.role)}</span>
+                                        <span>${esc(step.label)}</span>
+                                    </div>
+                                `
+                                    )
+                                    .join('')}
+                               </div>`
+                            : ''
+                    }
                 </article>
             `
                 )

@@ -1297,20 +1297,45 @@ img {
     padding-top: 0.5rem;
 }
 
-.eng-diagram {
+.arch-diagram {
     margin-top: auto;
-    padding: 0.75rem 0.875rem;
+    padding: 0.875rem;
     background-color: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.arch-diagram__step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 4px;
     font-family: var(--font-mono);
     font-size: 0.72rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
-    max-width: 100%;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
+    color: var(--text);
+}
+
+.arch-diagram__role {
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+}
+
+.arch-diagram__arrow {
+    align-self: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1;
+    color: var(--text-muted);
 }
 
 /* ==========================================================================
