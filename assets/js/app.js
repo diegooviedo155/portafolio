@@ -31,12 +31,36 @@ let currentLocale = (() => {
 /** @type {IntersectionObserver | null} */
 let revealObserver = null;
 
+function syncMetadata(meta) {
+    if (!meta) return;
+    document.title = meta.title;
+
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) descMeta.setAttribute('content', meta.description);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', meta.title);
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', meta.description);
+
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', meta.title);
+
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', meta.description);
+
+    const skipLink = document.querySelector('.skip-link');
+    if (skipLink) skipLink.textContent = meta.skipLink;
+}
+
 /**
  * Renders all sections for the active locale and re-binds dynamic handlers.
  */
 function renderAll() {
     const copy = PORTFOLIO_COPY[currentLocale];
     document.documentElement.lang = currentLocale;
+    syncMetadata(copy.meta);
 
     renderNav(copy.nav);
     renderHero(copy.hero);

@@ -601,8 +601,30 @@ img {
     gap: 0.4rem;
 }
 
+.hero__scroll {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.hero__scroll:hover {
+    color: var(--text);
+}
+
+.hero__scroll-line {
+    width: 1px;
+    height: 18px;
+    background: linear-gradient(to bottom, var(--text-muted), transparent);
+}
+
 /* ==========================================================================
-   Engineering Profile Section
+   Engineering Profile Section (7 Strategic Disciplines, Badge-Free)
    ========================================================================== */
 
 .profile-grid {
@@ -624,7 +646,7 @@ img {
 
 @media (min-width: 1024px) {
     .profile-grid--secondary {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -673,12 +695,27 @@ img {
     color: var(--text-secondary);
 }
 
-.capability-card__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.375rem;
+.stack-editorial {
     margin-top: auto;
-    padding-top: 0.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.stack-core {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.stack-supporting {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -1095,57 +1132,69 @@ img {
     font-weight: 500;
 }
 
-/* Secondary Case Studies (Golero & Fynta) */
+/* Secondary Case Studies (Distinct Narrative Layouts: Golero & Fynta) */
 .secondary-cases {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
-@media (min-width: 900px) {
-    .secondary-cases {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.case-card {
+.case-feature {
     background-color: var(--bg-elevated);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     transition: border-color var(--transition-fast);
 }
 
-.case-card:hover {
+.case-feature:hover {
     border-color: var(--border-strong);
 }
 
-.case-card__media {
-    aspect-ratio: 16 / 9;
+@media (min-width: 900px) {
+    .case-feature {
+        grid-template-columns: 1.05fr 1fr;
+    }
+
+    .case-feature--reverse .case-feature__media {
+        order: 2;
+        border-right: none;
+        border-left: 1px solid var(--border);
+    }
+}
+
+.case-feature__media {
     background-color: var(--bg-subtle);
     border-bottom: 1px solid var(--border);
     overflow: hidden;
+    min-height: 240px;
 }
 
-.case-card__media img {
+@media (min-width: 900px) {
+    .case-feature__media {
+        border-bottom: none;
+        border-right: 1px solid var(--border);
+    }
+}
+
+.case-feature__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform var(--transition-base);
 }
 
-.case-card:hover .case-card__media img {
+.case-feature:hover .case-feature__media img {
     transform: scale(1.02);
 }
 
-.case-card__body {
-    padding: 1.75rem;
+.case-feature__body {
+    padding: clamp(1.5rem, 3.5vw, 2.25rem);
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    flex: 1;
+    gap: 1.125rem;
 }
 
 .case-card__head {
@@ -1155,10 +1204,20 @@ img {
     gap: 1rem;
 }
 
+.case-card__badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
 .case-card__title {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
 }
 
 .case-card__domain {
@@ -1191,12 +1250,57 @@ img {
     margin-bottom: 0.25rem;
 }
 
+.arch-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.875rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+.arch-flow__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.82rem;
+}
+
+.arch-flow__layer {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.arch-flow__detail {
+    color: var(--text);
+    font-weight: 500;
+    text-align: right;
+}
+
 .case-card__tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.375rem;
     margin-top: auto;
-    padding-top: 0.75rem;
+    padding-top: 0.5rem;
+}
+
+.eng-diagram {
+    margin-top: auto;
+    padding: 0.75rem 0.875rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    overflow-x: auto;
+    white-space: pre;
 }
 
 /* ==========================================================================

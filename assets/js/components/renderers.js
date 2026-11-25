@@ -131,11 +131,16 @@ export function renderHero(hero) {
                 </div>
             </aside>
         </div>
+
+        <a href="#profile" class="hero__scroll">
+            <span class="hero__scroll-line" aria-hidden="true"></span>
+            <span>${esc(hero.scrollCue)}</span>
+        </a>
     `;
 }
 
 /**
- * Renders Engineering Profile (6 structured capability domains).
+ * Renders Engineering Profile (7 strategic disciplines, badge-free editorial typography).
  * @param {any} profile
  */
 export function renderProfile(profile) {
@@ -152,8 +157,13 @@ export function renderProfile(profile) {
                 <span class="capability-card__index">${esc(domain.index)}</span>
             </div>
             <p class="capability-card__summary">${esc(domain.summary)}</p>
-            <div class="capability-card__tags">
-                ${domain.stack.map((tech) => `<span class="tag">${esc(tech)}</span>`).join('')}
+            <div class="stack-editorial">
+                <p class="stack-core">${esc(domain.core.join(' · '))}</p>
+                ${
+                    domain.supporting?.length
+                        ? `<p class="stack-supporting">${esc(domain.supporting.join(' · '))}</p>`
+                        : ''
+                }
             </div>
         </article>
     `;
@@ -246,7 +256,7 @@ export function renderProjects(projects) {
     const root = document.getElementById('projects-content');
     if (!root) return;
 
-    const { tandi, secondary } = projects;
+    const { tandi, golero, fynta, labels } = projects;
 
     root.innerHTML = `
         <div class="section-header reveal">
@@ -345,59 +355,108 @@ export function renderProjects(projects) {
                 </div>
             </article>
 
-            <!-- Secondary Case Studies: Golero & Fynta -->
+            <!-- Distinct Case Studies: Golero (Product & Ops) & Fynta (Architecture & Monorepo) -->
             <div class="secondary-cases">
-                ${secondary
-                    .map(
-                        (item) => `
-                    <article class="case-card reveal">
-                        <div class="case-card__media">
-                            <img src="${item.image}" alt="${esc(item.alt)}" loading="lazy" width="800" height="450">
+                <article class="case-feature reveal">
+                    <div class="case-feature__media">
+                        <img src="${golero.image}" alt="${esc(golero.alt)}" loading="lazy" width="800" height="450">
+                    </div>
+                    <div class="case-feature__body">
+                        <div class="case-card__head">
+                            <div>
+                                <span class="case-card__badge">${esc(golero.badge)}</span>
+                                <h3 class="case-card__title">${esc(golero.name)}</h3>
+                                <p class="case-card__domain">${esc(golero.domain)}</p>
+                            </div>
+                            <a href="${golero.url}" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" aria-label="${esc(labels.visitLive)}: ${esc(golero.name)}">
+                                ${ICONS.external}
+                            </a>
                         </div>
-                        <div class="case-card__body">
-                            <div class="case-card__head">
-                                <div>
-                                    <h3 class="case-card__title">${esc(item.name)}</h3>
-                                    <p class="case-card__domain">${esc(item.domain)}</p>
-                                </div>
-                                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" aria-label="${esc(item.name)}">
-                                    ${ICONS.external}
-                                </a>
+
+                        <p class="case-card__summary">${esc(golero.summary)}</p>
+
+                        <div class="case-card__blocks">
+                            <div>
+                                <p class="case-card__block-title">${esc(labels.problem)}</p>
+                                <p class="case-card__summary">${esc(golero.problem)}</p>
                             </div>
-
-                            <p class="case-card__summary">${esc(item.summary)}</p>
-
-                            <div class="case-card__blocks">
-                                <div>
-                                    <p class="case-card__block-title">Problem</p>
-                                    <p class="case-card__summary">${esc(item.problem)}</p>
-                                </div>
-                                <div>
-                                    <p class="case-card__block-title">Architecture &amp; Execution</p>
-                                    <p class="case-card__summary">${esc(item.architecture)}</p>
-                                </div>
+                            <div>
+                                <p class="case-card__block-title">${esc(labels.processModeling)}</p>
+                                <p class="case-card__summary">${esc(golero.processModeling)}</p>
                             </div>
-
-                            <div class="case-card__tags">
-                                ${item.stack.map((tech) => `<span class="tag">${esc(tech)}</span>`).join('')}
+                            <div>
+                                <p class="case-card__block-title">${esc(labels.architecture)}</p>
+                                <p class="case-card__summary">${esc(golero.architecture)}</p>
                             </div>
                         </div>
-                    </article>
-                `
-                    )
-                    .join('')}
+
+                        <div class="case-card__tags">
+                            ${golero.stack.map((tech) => `<span class="tag">${esc(tech)}</span>`).join('')}
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case-feature case-feature--reverse reveal">
+                    <div class="case-feature__media">
+                        <img src="${fynta.image}" alt="${esc(fynta.alt)}" loading="lazy" width="800" height="450">
+                    </div>
+                    <div class="case-feature__body">
+                        <div class="case-card__head">
+                            <div>
+                                <span class="case-card__badge">${esc(fynta.badge)}</span>
+                                <h3 class="case-card__title">${esc(fynta.name)}</h3>
+                                <p class="case-card__domain">${esc(fynta.domain)}</p>
+                            </div>
+                            <a href="${fynta.url}" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" aria-label="${esc(labels.visitLive)}: ${esc(fynta.name)}">
+                                ${ICONS.external}
+                            </a>
+                        </div>
+
+                        <p class="case-card__summary">${esc(fynta.summary)}</p>
+
+                        <div class="arch-flow" aria-label="Fynta architecture layers">
+                            ${fynta.architectureFlow
+                                .map(
+                                    (row) => `
+                                <div class="arch-flow__row">
+                                    <span class="arch-flow__layer">${esc(row.layer)}</span>
+                                    <span class="arch-flow__detail">${esc(row.detail)}</span>
+                                </div>
+                            `
+                                )
+                                .join('')}
+                        </div>
+
+                        <div class="case-card__blocks">
+                            <div>
+                                <p class="case-card__block-title">${esc(labels.problem)}</p>
+                                <p class="case-card__summary">${esc(fynta.problem)}</p>
+                            </div>
+                            <div>
+                                <p class="case-card__block-title">${esc(labels.architecture)}</p>
+                                <p class="case-card__summary">${esc(fynta.architecture)}</p>
+                            </div>
+                        </div>
+
+                        <div class="case-card__tags">
+                            ${fynta.stack.map((tech) => `<span class="tag">${esc(tech)}</span>`).join('')}
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     `;
 }
 
 /**
- * Renders Engineering Cases section.
+ * Renders Engineering Stories section (Context -> Problem -> Approach -> Decision -> Takeaway).
  * @param {any} casesData
  */
 export function renderEngineeringCases(casesData) {
     const root = document.getElementById('cases-content');
     if (!root) return;
+
+    const { labels, items } = casesData;
 
     root.innerHTML = `
         <div class="section-header reveal">
@@ -407,7 +466,7 @@ export function renderEngineeringCases(casesData) {
         </div>
 
         <div class="eng-cases-grid">
-            ${casesData.items
+            ${items
                 .map(
                     (item) => `
                 <article class="eng-case-card reveal">
@@ -415,26 +474,27 @@ export function renderEngineeringCases(casesData) {
                     <h3 class="eng-case-card__title">${esc(item.title)}</h3>
                     <dl class="eng-case-dl">
                         <div>
-                            <dt>Context</dt>
+                            <dt>${esc(labels.context)}</dt>
                             <dd>${esc(item.context)}</dd>
                         </div>
                         <div>
-                            <dt>Problem</dt>
+                            <dt>${esc(labels.problem)}</dt>
                             <dd>${esc(item.problem)}</dd>
                         </div>
                         <div>
-                            <dt>Solution</dt>
-                            <dd>${esc(item.solution)}</dd>
+                            <dt>${esc(labels.approach)}</dt>
+                            <dd>${esc(item.approach)}</dd>
                         </div>
                         <div>
-                            <dt>Decision</dt>
+                            <dt>${esc(labels.decision)}</dt>
                             <dd>${esc(item.decision)}</dd>
                         </div>
                         <div>
-                            <dt>Takeaway</dt>
+                            <dt>${esc(labels.takeaway)}</dt>
                             <dd>${esc(item.takeaway)}</dd>
                         </div>
                     </dl>
+                    ${item.diagram ? `<pre class="eng-diagram" aria-label="Architecture flow">${esc(item.diagram)}</pre>` : ''}
                 </article>
             `
                 )
