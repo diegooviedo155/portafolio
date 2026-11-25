@@ -55,7 +55,7 @@ export const PROFILE_META = {
     email: 'diegooviedo155@gmail.com',
     linkedin: 'https://www.linkedin.com/in/diego-alejandro-oviedo/',
     github: 'https://github.com/diegooviedo155',
-    cvPath: './assets/cv/CV-Diego-Oviedo-EN.pdf',
+    cvPath: '/assets/cv/CV-Diego-Oviedo-EN.pdf',
     siteUrl: 'https://portafolio-diego-oviedo.netlify.app/'
 };
 
@@ -63,9 +63,9 @@ export const PROFILE_META = {
 export const PORTFOLIO_COPY = {
     en: {
         meta: {
-            title: 'Diego Alejandro Oviedo — Full Stack Developer | Angular, React, Java & Node.js',
+            title: 'Diego Alejandro Oviedo | Full Stack Developer — Angular, React, Java & Node.js',
             description:
-                'Diego Alejandro Oviedo — Full Stack Developer & Frontend Engineer in Buenos Aires, Argentina (Remote). Experienced in Angular, React, Java, Node.js, Microfrontends, Web Components & Mobile. Builder of Tandi, Golero, and Fynta.',
+                'Software developer experienced in Angular, React, Java, Node.js, microfrontends and mobile applications. Building SaaS products including Tandi, Golero and Fynta.',
             skipLink: 'Skip to content'
         },
         nav: {
@@ -85,7 +85,7 @@ export const PORTFOLIO_COPY = {
             ctaPrimary: 'View Case Studies',
             ctaSecondary: 'Contact Me',
             ctaCv: 'Resume (PDF)',
-            cvPath: './assets/cv/CV-Diego-Oviedo-EN.pdf',
+            cvPath: '/assets/cv/CV-Diego-Oviedo-EN.pdf',
             scrollCue: 'Scroll to explore',
             specHeaderLeft: 'ENGINEERING SNAPSHOT',
             specHeaderRight: 'BUENOS AIRES · REMOTE',
@@ -285,19 +285,19 @@ export const PORTFOLIO_COPY = {
                 screenshotsLabel: 'Product Walkthrough (tandi.com.ar)',
                 screenshots: /** @type {ScreenshotItem[]} */ ([
                     {
-                        image: 'assets/img/tandi-1.png',
+                        image: '/assets/img/tandi-1.png',
                         alt: 'Tandi landing page and mobile storefront preview showing stock, pre-order, and hybrid selling modes',
                         title: 'Storefront & Hybrid Selling',
                         meta: 'Stock · Pre-order · Wholesale flow'
                     },
                     {
-                        image: 'assets/img/tandi-2.png',
+                        image: '/assets/img/tandi-2.png',
                         alt: 'Tandi promotions, customer history, and automatic order tracking timeline',
                         title: 'Promotions & Order Tracking',
                         meta: 'Coupons · Packs · Customer tracking link'
                     },
                     {
-                        image: 'assets/img/tandi-3.png',
+                        image: '/assets/img/tandi-3.png',
                         alt: 'Tandi workflow comparison covering wholesale notebook, flexible deposits, and mobile checkout',
                         title: 'Deposits & Wholesale Workflow',
                         meta: 'Flexible señas · Mobile checkout'
@@ -370,7 +370,7 @@ export const PORTFOLIO_COPY = {
                 name: 'Golero',
                 domain: 'Sports Tech · Court Booking Platform',
                 url: 'https://golero.com.ar/',
-                image: 'assets/img/work-golero.jpg',
+                image: '/assets/img/work-golero.jpg',
                 alt: 'Golero sports club and court reservation platform screenshot',
                 summary:
                     'SaaS platform digitizing sports clubs and complexes—enabling 24/7 court discovery, real-time availability, online reservations, and Mercado Pago payments.',
@@ -387,7 +387,7 @@ export const PORTFOLIO_COPY = {
                 name: 'Fynta',
                 domain: 'Electronic Invoicing · Monorepo Platform',
                 url: 'https://fynta.app/',
-                image: 'assets/img/work-fynta.jpg',
+                image: '/assets/img/work-fynta.jpg',
                 alt: 'Fynta electronic invoicing SaaS for Argentine monotributistas screenshot',
                 summary:
                     'Electronic invoicing SaaS for Argentine monotributistas—handling CAE voucher issuance with ARCA (AFIP), category cap tracking, and preventive alerts.',
@@ -483,9 +483,9 @@ export const PORTFOLIO_COPY = {
 
     es: {
         meta: {
-            title: 'Diego Alejandro Oviedo — Full Stack Developer | Angular, React, Java & Node.js',
+            title: 'Diego Alejandro Oviedo | Desarrollador Full Stack — Angular, React, Java y Node.js',
             description:
-                'Diego Alejandro Oviedo — Full Stack Developer y Frontend Engineer en Buenos Aires, Argentina (Remoto). Experiencia en Angular, React, Java, Node.js, Microfrontends, Web Components y Mobile. Creador de Tandi, Golero y Fynta.',
+                'Desarrollador de software con experiencia en Angular, React, Java, Node.js, microfrontends y aplicaciones móviles. Creador de productos SaaS como Tandi, Golero y Fynta.',
             skipLink: 'Ir al contenido principal'
         },
         nav: {
@@ -505,7 +505,7 @@ export const PORTFOLIO_COPY = {
             ctaPrimary: 'Ver casos de estudio',
             ctaSecondary: 'Contactarme',
             ctaCv: 'Descargar CV',
-            cvPath: './assets/cv/CV-Diego-Oviedo-ES.pdf',
+            cvPath: '/assets/cv/CV-Diego-Oviedo-ES.pdf',
             scrollCue: 'Deslizá para explorar',
             specHeaderLeft: 'PERFIL TÉCNICO',
             specHeaderRight: 'BUENOS AIRES · REMOTO',
@@ -705,19 +705,19 @@ export const PORTFOLIO_COPY = {
                 screenshotsLabel: 'Recorrido Visual del Producto (tandi.com.ar)',
                 screenshots: /** @type {ScreenshotItem[]} */ ([
                     {
-                        image: 'assets/img/tandi-1.png',
+                        image: '/assets/img/tandi-1.png',
                         alt: 'Vista principal de Tandi mostrando tienda mobile con stock propio, por encargo e híbrido',
                         title: 'Tienda y Venta Híbrida',
                         meta: 'Stock · Encargo · Cuaderno mayorista'
                     },
                     {
-                        image: 'assets/img/tandi-2.png',
+                        image: '/assets/img/tandi-2.png',
                         alt: 'Promociones, historial de clientes y link de seguimiento automático de pedidos en Tandi',
                         title: 'Promociones y Seguimiento',
                         meta: 'Cupones · Packs · Link de estado'
                     },
                     {
-                        image: 'assets/img/tandi-3.png',
+                        image: '/assets/img/tandi-3.png',
                         alt: 'Comparativa operativa de Tandi: compras mayoristas, cobro de señas y checkout móvil',
                         title: 'Señas y Compras Mayoristas',
                         meta: 'Señas flexibles · Checkout en celular'
@@ -790,7 +790,7 @@ export const PORTFOLIO_COPY = {
                 name: 'Golero',
                 domain: 'Sports Tech · Reservas de Canchas',
                 url: 'https://golero.com.ar/',
-                image: 'assets/img/work-golero.jpg',
+                image: '/assets/img/work-golero.jpg',
                 alt: 'Captura de Golero, plataforma de reservas de canchas deportivas',
                 summary:
                     'Plataforma SaaS que digitaliza clubes y complejos deportivos: búsqueda de canchas, disponibilidad en tiempo real, reservas online 24/7 y cobros con Mercado Pago.',
@@ -807,7 +807,7 @@ export const PORTFOLIO_COPY = {
                 name: 'Fynta',
                 domain: 'Facturación Electrónica · Plataforma Monorepo',
                 url: 'https://fynta.app/',
-                image: 'assets/img/work-fynta.jpg',
+                image: '/assets/img/work-fynta.jpg',
                 alt: 'Captura de Fynta, SaaS de facturación electrónica para monotributistas',
                 summary:
                     'Plataforma SaaS de facturación electrónica para monotributistas argentinos: emisión de comprobantes con CAE ante ARCA, control de tope de categoría y alertas preventivas.',

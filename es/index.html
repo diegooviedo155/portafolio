@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es" data-prerendered="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Alejandro Oviedo | Desarrollador Full Stack — Angular, React, Java y Node.js</title>
+    <meta name="description" content="Desarrollador de software con experiencia en Angular, React, Java, Node.js, microfrontends y aplicaciones móviles. Creador de productos SaaS como Tandi, Golero y Fynta.">
+    <meta name="author" content="Diego Alejandro Oviedo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://portafolio-diego-oviedo.netlify.app/es/">
+    <link rel="alternate" hreflang="en" href="https://portafolio-diego-oviedo.netlify.app/">
+    <link rel="alternate" hreflang="es" href="https://portafolio-diego-oviedo.netlify.app/es/">
+    <link rel="alternate" hreflang="x-default" href="https://portafolio-diego-oviedo.netlify.app/">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/img/logo2.png">
+    <link rel="apple-touch-icon" href="/assets/img/logo2.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:url" content="https://portafolio-diego-oviedo.netlify.app/es/">
+    <meta property="og:title" content="Diego Alejandro Oviedo | Desarrollador Full Stack — Angular, React, Java y Node.js">
+    <meta property="og:description" content="Desarrollador de software con experiencia en Angular, React, Java, Node.js, microfrontends y aplicaciones móviles. Creador de productos SaaS como Tandi, Golero y Fynta.">
+    <meta property="og:image" content="https://portafolio-diego-oviedo.netlify.app/assets/img/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Diego Alejandro Oviedo">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Diego Alejandro Oviedo | Desarrollador Full Stack — Angular, React, Java y Node.js">
+    <meta name="twitter:description" content="Desarrollador de software con experiencia en Angular, React, Java, Node.js, microfrontends y aplicaciones móviles. Creador de productos SaaS como Tandi, Golero y Fynta.">
+    <meta name="twitter:image" content="https://portafolio-diego-oviedo.netlify.app/assets/img/og-cover.png">
+
+    <meta name="theme-color" content="#09090b">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Prevent theme flash -->
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem('portfolio_theme') === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Structured Data (SEO) -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Person",
+            "@id": "https://portafolio-diego-oviedo.netlify.app/#person",
+            "name": "Diego Alejandro Oviedo",
+            "jobTitle": "Desarrollador Full Stack",
+            "description": "Desarrollador de software con experiencia en Angular, React, Java, Node.js, microfrontends y aplicaciones móviles. Creador de productos SaaS como Tandi, Golero y Fynta.",
+            "url": "https://portafolio-diego-oviedo.netlify.app/",
+            "image": "https://portafolio-diego-oviedo.netlify.app/assets/img/og-cover.png",
+            "email": "mailto:diegooviedo155@gmail.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Buenos Aires",
+                "addressCountry": "AR"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/in/diego-alejandro-oviedo/",
+                "https://github.com/diegooviedo155"
+            ],
+            "knowsAbout": [
+                "Angular",
+                "React",
+                "TypeScript",
+                "Java",
+                "Spring",
+                "Node.js",
+                "NestJS",
+                "Next.js",
+                "Microfrontends",
+                "Web Components",
+                "Stencil.js",
+                "Ionic",
+                "Capacitor",
+                "React Native",
+                "PostgreSQL",
+                "MySQL",
+                "Docker"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://portafolio-diego-oviedo.netlify.app/#website",
+            "url": "https://portafolio-diego-oviedo.netlify.app/",
+            "name": "Diego Alejandro Oviedo — Portfolio",
+            "author": {
+                "@id": "https://portafolio-diego-oviedo.netlify.app/#person"
+            },
+            "inLanguage": [
+                "en",
+                "es"
+            ]
+        },
+        {
+            "@type": "ProfilePage",
+            "@id": "https://portafolio-diego-oviedo.netlify.app/es/#profilepage",
+            "url": "https://portafolio-diego-oviedo.netlify.app/es/",
+            "name": "Diego Alejandro Oviedo | Desarrollador Full Stack — Angular, React, Java y Node.js",
+            "description": "Desarrollador de software con experiencia en Angular, React, Java, Node.js, microfrontends y aplicaciones móviles. Creador de productos SaaS como Tandi, Golero y Fynta.",
+            "inLanguage": "es",
+            "isPartOf": {
+                "@id": "https://portafolio-diego-oviedo.netlify.app/#website"
+            },
+            "mainEntity": {
+                "@id": "https://portafolio-diego-oviedo.netlify.app/#person"
+            }
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "Tandi",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://tandi.com.ar/",
+            "image": "https://portafolio-diego-oviedo.netlify.app/assets/img/tandi-1.png",
+            "description": "Una plataforma SaaS diseñada para simplificar la venta online de emprendedores, revendedores y pequeños comercios.",
+            "creator": {
+                "@id": "https://portafolio-diego-oviedo.netlify.app/#person"
+            }
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "Golero",
+            "applicationCategory": "SportsApplication",
+            "operatingSystem": "Web",
+            "url": "https://golero.com.ar/",
+            "image": "https://portafolio-diego-oviedo.netlify.app/assets/img/work-golero.jpg",
+            "description": "Plataforma SaaS que digitaliza clubes y complejos deportivos: búsqueda de canchas, disponibilidad en tiempo real, reservas online 24/7 y cobros con Mercado Pago.",
+            "creator": {
+                "@id": "https://portafolio-diego-oviedo.netlify.app/#person"
+            }
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "Fynta",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "url": "https://fynta.app/",
+            "image": "https://portafolio-diego-oviedo.netlify.app/assets/img/work-fynta.jpg",
+            "description": "Plataforma SaaS de facturación electrónica para monotributistas argentinos: emisión de comprobantes con CAE ante ARCA, control de tope de categoría y alertas preventivas.",
+            "creator": {
+                "@id": "https://portafolio-diego-oviedo.netlify.app/#person"
+            }
+        }
+    ]
+}
+    </script>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navegación principal">
+            <a href="#hero" class="nav__brand">
+                <img id="nav-logo" src="/assets/img/logo2.png" alt="Logo Diego Oviedo" class="nav__logo-img" width="28" height="28">
+                <span>Diego Oviedo</span>
+            </a>
+
+            <div class="nav__links" id="nav-links"><a href="#profile" class="nav__link">Capacidades</a><a href="#experience" class="nav__link">Experiencia</a><a href="#projects" class="nav__link">Casos de estudio</a><a href="#cases" class="nav__link">Ingeniería</a><a href="#contact" class="nav__link">Contacto</a></div>
+
+            <div class="nav__controls">
+                <a id="lang-toggle" href="/" hreflang="en" class="icon-btn" aria-label="Switch language to English">EN</a>
+                <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to light mode">Light</button>
+                <button
+                    type="button"
+                    id="mobile-menu-toggle"
+                    class="icon-btn nav__mobile-toggle"
+                    aria-label="Abrir menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="mobile-drawer"
+                >
+                    Menu
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="mobile-drawer" class="mobile-drawer" aria-label="Navegación móvil" aria-hidden="true">
+        <div id="mobile-drawer-links"><a href="#profile" class="mobile-drawer__link">Capacidades</a><a href="#experience" class="mobile-drawer__link">Experiencia</a><a href="#projects" class="mobile-drawer__link">Casos de estudio</a><a href="#cases" class="mobile-drawer__link">Ingeniería</a><a href="#contact" class="mobile-drawer__link">Contacto</a></div>
+    </div>
+
+    <main id="main-content">
+        <section id="hero" class="hero">
+            <div class="container" id="hero-content">
+        <div class="hero__grid">
+            <div>
+                <div class="hero__status">
+                    <span class="hero__status-dot" aria-hidden="true"></span>
+                    <span>Abierto a roles Senior Frontend, Full Stack y Frontend Lead</span>
+                </div>
+
+                <p class="hero__name">Diego Alejandro Oviedo · Full Stack Developer · Angular, React, Java &amp; Node.js · Microfrontends &amp; Mobile</p>
+
+                <h1 class="hero__title">
+                    Construyendo productos, interfaces escalables
+                    <span class="hero__title-muted"> y aplicaciones web modernas.</span>
+                </h1>
+
+                <p class="hero__subtitle">Desarrollador de software con experiencia en Angular, React, Java y Node.js. Construyo, modernizo e integro aplicaciones web y móviles, combinando frontend engineering, backend y arquitectura.</p>
+
+                <div class="hero__actions">
+                    <a href="#projects" class="btn btn--primary">
+                        Ver casos de estudio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn--secondary">
+                        Contactarme
+                    </a>
+                    <a href="/assets/cv/CV-Diego-Oviedo-ES.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> Descargar CV
+                    </a>
+                </div>
+
+                <div class="hero__links">
+                    <a href="https://www.linkedin.com/in/diego-alejandro-oviedo/" target="_blank" rel="noopener noreferrer" class="hero__social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn
+                    </a>
+                    <a href="https://github.com/diegooviedo155" target="_blank" rel="noopener noreferrer" class="hero__social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> GitHub
+                    </a>
+                    <a href="mailto:diegooviedo155@gmail.com" class="hero__social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> diegooviedo155@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <aside class="hero__spec" aria-label="Engineering overview">
+                <div class="hero__spec-header">
+                    <span>PERFIL TÉCNICO</span>
+                    <span>BUENOS AIRES · REMOTO</span>
+                </div>
+                <div class="hero__spec-list">
+                    
+                        <div class="hero__spec-item">
+                            <span class="hero__spec-label">Foco principal</span>
+                            <span class="hero__spec-value">Senior Frontend · Full Stack · Arquitectura Frontend</span>
+                        </div>
+                    
+                        <div class="hero__spec-item">
+                            <span class="hero__spec-label">Stack principal</span>
+                            <span class="hero__spec-value">Angular, React, TypeScript, Java / Spring, Node.js / NestJS</span>
+                        </div>
+                    
+                        <div class="hero__spec-item">
+                            <span class="hero__spec-label">Producto insignia</span>
+                            <span class="hero__spec-value">Tandi — Plataforma SaaS de gestión comercial</span>
+                        </div>
+                    
+                        <div class="hero__spec-item">
+                            <span class="hero__spec-label">Trayectoria</span>
+                            <span class="hero__spec-value">Medios de pago, Entretenimiento, Mobile y SaaS propios (2021–2026)</span>
+                        </div>
+                    
+                </div>
+                <div class="hero__spec-footer">
+                    <span class="tag">Microfrontends</span><span class="tag">Web Components</span><span class="tag">Ionic / Capacitor</span><span class="tag">React Native</span><span class="tag">Nx</span>
+                </div>
+            </aside>
+        </div>
+
+        <a href="#profile" class="hero__scroll">
+            <span class="hero__scroll-line" aria-hidden="true"></span>
+            <span>Deslizá para explorar</span>
+        </a>
+    </div>
+        </section>
+
+        <section id="profile" class="section">
+            <div class="container" id="profile-content">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">01 / Perfil de Ingeniería</span>
+            <h2 class="section-title">Ejecución full stack con profundidad en arquitectura frontend</h2>
+            <p class="section-subtitle">Organizado en siete disciplinas de ingeniería, priorizando las tecnologías con las que construyo, modernizo y escalo sistemas en producción.</p>
+        </div>
+
+        <div class="profile-grid profile-grid--primary">
+            
+        <article class="capability-card capability-card--primary reveal">
+            <div class="capability-card__head">
+                <h3 class="capability-card__title">Frontend Engineering</h3>
+                <span class="capability-card__index">01</span>
+            </div>
+            <p class="capability-card__summary">Diseño y desarrollo de interfaces web mantenibles, accesibles y de alto rendimiento en Angular y React con TypeScript estricto.</p>
+            <div class="stack-editorial">
+                <p class="stack-core">Angular · React · TypeScript · Next.js</p>
+                <p class="stack-supporting">JavaScript · Redux · TanStack Query · Tailwind CSS · HTML5 · CSS3 · Sass</p>
+            </div>
+        </article>
+    
+        <article class="capability-card capability-card--primary reveal">
+            <div class="capability-card__head">
+                <h3 class="capability-card__title">Backend Engineering</h3>
+                <span class="capability-card__index">02</span>
+            </div>
+            <p class="capability-card__summary">Desarrollo de APIs REST modulares y microservicios enfocados en claridad de dominio, persistencia e integración de servicios.</p>
+            <div class="stack-editorial">
+                <p class="stack-core">Java · Spring · Node.js · NestJS</p>
+                <p class="stack-supporting">APIs REST · Microservicios · JPA · Hibernate · Express · Zod</p>
+            </div>
+        </article>
+    
+        </div>
+        <div class="profile-grid profile-grid--secondary">
+            
+        <article class="capability-card  reveal">
+            <div class="capability-card__head">
+                <h3 class="capability-card__title">Architecture</h3>
+                <span class="capability-card__index">03</span>
+            </div>
+            <p class="capability-card__summary">Migraciones incrementales, bibliotecas de componentes multi-framework y monorepos tipados.</p>
+            <div class="stack-editorial">
+                <p class="stack-core">Microfrontends · Web Components · Stencil.js · Nx</p>
+                <p class="stack-supporting">Design Systems · Contratos Compartidos · Arquitectura Modular</p>
+            </div>
+        </article>
+    
+        <article class="capability-card  reveal">
+            <div class="capability-card__head">
+                <h3 class="capability-card__title">Mobile Development</h3>
+                <span class="capability-card__index">04</span>
+            </div>
+            <p class="capability-card__summary">Aplicaciones híbridas y multiplataforma con integraciones nativas en Android e iOS.</p>
+            <div class="stack-editorial">
+                <p class="stack-core">Ionic · Capacitor · React Native · Expo</p>
+                <p class="stack-supporting">Cordova · Plugins Nativos · Despliegue en Tiendas</p>
+            </div>
+        </article>
+    
+        <article class="capability-card  reveal">
+            <div class="capability-card__head">
+                <h3 class="capability-card__title">Databases</h3>
+                <span class="capability-card__index">05</span>
+            </div>
+            <p class="capability-card__summary">Modelado relacional, repositorios por dominio y persistencia transaccional.</p>
+            <div class="stack-editorial">
+                <p class="stack-core">PostgreSQL · MySQL · Supabase</p>
+                <p class="stack-supporting">JPA / Hibernate · Repositorios de Dominio</p>
+            </div>
+        </article>
+    
+        <article class="capability-card  reveal">
+            <div class="capability-card__head">
+                <h3 class="capability-card__title">DevOps &amp; Tooling</h3>
+                <span class="capability-card__index">06</span>
+            </div>
+            <p class="capability-card__summary">Entornos containerizados, pipelines de entrega, registro de artefactos y metodologías ágiles.</p>
+            <div class="stack-editorial">
+                <p class="stack-core">Docker · Jenkins · Git · Nexus</p>
+                <p class="stack-supporting">CI/CD · GitHub · GitLab · Scrum · Selenium</p>
+            </div>
+        </article>
+    
+        <article class="capability-card  reveal">
+            <div class="capability-card__head">
+                <h3 class="capability-card__title">Integrations</h3>
+                <span class="capability-card__index">07</span>
+            </div>
+            <p class="capability-card__summary">Pasarelas de pago, proveedores de identidad, notificaciones push y APIs externas.</p>
+            <div class="stack-editorial">
+                <p class="stack-core">Mercado Pago · Amazon Cognito · Firebase Cloud Messaging</p>
+                <p class="stack-supporting">Auth Biométrica · Facturación Electrónica · Webhooks</p>
+            </div>
+        </article>
+    
+        </div>
+    </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container" id="experience-content">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">02 / Experiencia Profesional</span>
+            <h2 class="section-title">Ingeniería en producción: medios de pago, entretenimiento y mobile</h2>
+            <p class="section-subtitle">Más de cuatro años construyendo y modernizando sistemas en producción, conectando aplicaciones existentes con arquitecturas modernas.</p>
+        </div>
+
+        <div class="experience-list">
+            
+                <article class="experience-entry reveal">
+                    <div class="experience-meta">
+                        <span class="experience-period">Junio 2022 – Mayo 2026</span>
+                        <h3 class="experience-company">Eldar</h3>
+                        <p class="experience-role">Full Stack Developer</p>
+                    </div>
+                    <div class="experience-body">
+                        <p class="experience-intro">Participación en proyectos de medios de pago, entretenimiento y modernización de aplicaciones—abarcando microservicios backend, bibliotecas de componentes, microfrontends y apps móviles híbridas.</p>
+                        <div class="experience-projects">
+                                    
+                                        <div class="exp-subcard">
+                                            <div class="exp-subcard__header">
+                                                <h4 class="exp-subcard__name">Onyra</h4>
+                                                <span class="exp-subcard__domain">Medios de pago</span>
+                                            </div>
+                                            <ul class="exp-bullets">
+                                                <li>Desarrollo de microservicios con Java y Spring, con persistencia en MySQL vía JPA e Hibernate.</li><li>Containerización y automatización con Docker y Jenkins.</li><li>Biblioteca de componentes con Stencil.js y Web Components, versionada y distribuida mediante Nexus.</li><li>Integración de microfrontends Angular y React.</li>
+                                            </ul>
+                                        </div>
+                                    
+                                        <div class="exp-subcard">
+                                            <div class="exp-subcard__header">
+                                                <h4 class="exp-subcard__name">Cabal</h4>
+                                                <span class="exp-subcard__domain">Medios de pago</span>
+                                            </div>
+                                            <ul class="exp-bullets">
+                                                <li>Modernización de aplicaciones web y mobile con React, Ionic, Capacitor y Cordova.</li><li>Implementación de Firebase Cloud Messaging y autenticación biométrica (huella y reconocimiento facial).</li><li>Integraciones nativas Android e iOS, despliegues a tiendas y gestión de ambientes de prueba.</li>
+                                            </ul>
+                                        </div>
+                                    
+                                        <div class="exp-subcard">
+                                            <div class="exp-subcard__header">
+                                                <h4 class="exp-subcard__name">Bold</h4>
+                                                <span class="exp-subcard__domain">Entretenimiento</span>
+                                            </div>
+                                            <ul class="exp-bullets">
+                                                <li>Desarrollo de aplicaciones híbridas con Ionic, Angular, Capacitor y Cordova.</li><li>Implementación de programas de puntos y canje de beneficios.</li><li>Participación en migraciones e integración de autenticación con Amazon Cognito.</li>
+                                            </ul>
+                                        </div>
+                                    
+                                        <div class="exp-subcard">
+                                            <div class="exp-subcard__header">
+                                                <h4 class="exp-subcard__name">Otras implementaciones</h4>
+                                                <span class="exp-subcard__domain">Arquitectura</span>
+                                            </div>
+                                            <ul class="exp-bullets">
+                                                <li>Migración incremental de React a Angular mediante microfrontends manteniendo continuidad en producción.</li><li>Entrega de dos productos mínimos viables (MVP) con Angular y mantenimiento de aplicaciones React.</li><li>Adopción de TanStack Query y Tailwind CSS.</li>
+                                            </ul>
+                                        </div>
+                                    
+                                   </div>
+                        
+                    </div>
+                </article>
+            
+                <article class="experience-entry reveal">
+                    <div class="experience-meta">
+                        <span class="experience-period">Septiembre 2021 – Junio 2022</span>
+                        <h3 class="experience-company">Health Management Solutions (HMS)</h3>
+                        <p class="experience-role">Software Developer</p>
+                    </div>
+                    <div class="experience-body">
+                        <p class="experience-intro">Desarrollo frontend orientado a aplicaciones móviles en el sector salud.</p>
+                        
+                        <ul class="exp-bullets">
+                                    <li>Desarrollo frontend mobile con Ionic y Angular.</li><li>Implementación de un módulo de notificaciones de deuda con acceso directo al pago vía Mercado Pago.</li>
+                                   </ul>
+                    </div>
+                </article>
+            
+        </div>
+    </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container" id="projects-content">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">03 / Proyectos Seleccionados</span>
+            <h2 class="section-title">Productos propios y casos de estudio</h2>
+            <p class="section-subtitle">Plataformas SaaS diseñadas y construidas de punta a punta—cada una resolviendo un problema operativo distinto con decisiones de producto y arquitectura propias.</p>
+        </div>
+
+        <div class="case-stack">
+            <article class="flagship-case reveal" aria-labelledby="tandi-heading">
+                <div class="flagship-case__top">
+                    <div>
+                        <span class="flagship-case__badge">Caso de Estudio Principal · SaaS</span>
+                        <h3 id="tandi-heading" class="flagship-case__title">Tandi</h3>
+                        <p class="flagship-case__subtitle">De pedidos dispersos por WhatsApp a un flujo de venta digital estructurado.</p>
+                        <p class="flagship-case__desc">Una plataforma SaaS diseñada para simplificar la venta online de emprendedores, revendedores y pequeños comercios.</p>
+                    </div>
+                    <div class="flagship-case__actions">
+                        <a href="https://tandi.com.ar/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                            Visitar Tandi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
+                        <a href="#contact" class="btn btn--secondary">
+                            Contactarme
+                        </a>
+                    </div>
+                </div>
+
+                <div class="case-split">
+                    <div class="case-panel">
+                        <span class="case-panel__label">El problema</span>
+                        <h4 class="case-panel__heading">Vender por chat genera desorden operativo</h4>
+                        <p class="case-panel__text">Muchos emprendedores, revendedores y comercios gestionan sus ventas entre chats de WhatsApp, publicaciones en Instagram, catálogos manuales, listas de precios y planillas. El problema no es solo vender online: es organizar toda la operación comercial (variantes, señas, encargos, stock y envíos) sin complejidad técnica.</p>
+                    </div>
+                    <div class="case-panel">
+                        <span class="case-panel__label">La solución</span>
+                        <h4 class="case-panel__heading">Un flujo centralizado desde el catálogo hasta la entrega</h4>
+                        <p class="case-panel__text">Tandi centraliza la experiencia de venta en una plataforma que permite a cada comercio organizar su catálogo online, pedidos, cobros, señas, saldos, stock, encargos y envíos—adaptándose a negocios que venden con stock propio, por encargo o en modo híbrido.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="case-section-label">Recorrido Visual del Producto (tandi.com.ar)</p>
+                    <div class="screenshot-grid">
+                        
+                            <figure class="screenshot-card">
+                                <div class="screenshot-card__media">
+                                    <img src="/assets/img/tandi-1.png" alt="Vista principal de Tandi mostrando tienda mobile con stock propio, por encargo e híbrido" loading="lazy" decoding="async" width="1440" height="900">
+                                </div>
+                                <figcaption class="screenshot-card__caption">
+                                    <span class="screenshot-card__title">Tienda y Venta Híbrida</span>
+                                    <span class="screenshot-card__meta">Stock · Encargo · Cuaderno mayorista</span>
+                                </figcaption>
+                            </figure>
+                        
+                            <figure class="screenshot-card">
+                                <div class="screenshot-card__media">
+                                    <img src="/assets/img/tandi-2.png" alt="Promociones, historial de clientes y link de seguimiento automático de pedidos en Tandi" loading="lazy" decoding="async" width="1440" height="900">
+                                </div>
+                                <figcaption class="screenshot-card__caption">
+                                    <span class="screenshot-card__title">Promociones y Seguimiento</span>
+                                    <span class="screenshot-card__meta">Cupones · Packs · Link de estado</span>
+                                </figcaption>
+                            </figure>
+                        
+                            <figure class="screenshot-card">
+                                <div class="screenshot-card__media">
+                                    <img src="/assets/img/tandi-3.png" alt="Comparativa operativa de Tandi: compras mayoristas, cobro de señas y checkout móvil" loading="lazy" decoding="async" width="1440" height="900">
+                                </div>
+                                <figcaption class="screenshot-card__caption">
+                                    <span class="screenshot-card__title">Señas y Compras Mayoristas</span>
+                                    <span class="screenshot-card__meta">Señas flexibles · Checkout en celular</span>
+                                </figcaption>
+                            </figure>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <p class="case-section-label">Arquitectura del Producto y Capacidades Verificadas</p>
+                    <div class="capabilities-grid">
+                        
+                            <div class="cap-item">
+                                <h4 class="cap-item__title">Tienda y Link Propio</h4>
+                                <p class="cap-item__desc">Enlace único para compartir en estados de WhatsApp, biografía de Instagram y grupos de difusión.</p>
+                            </div>
+                        
+                            <div class="cap-item">
+                                <h4 class="cap-item__title">Catálogo y Variantes</h4>
+                                <p class="cap-item__desc">Galerías por talle y color con stock independiente por cada variante.</p>
+                            </div>
+                        
+                            <div class="cap-item">
+                                <h4 class="cap-item__title">Stock, Encargo e Híbrido</h4>
+                                <p class="cap-item__desc">Soporte para entrega inmediata con stock propio, preventas/encargos o combinación de ambos.</p>
+                            </div>
+                        
+                            <div class="cap-item">
+                                <h4 class="cap-item__title">Pedidos, Señas y Saldos</h4>
+                                <p class="cap-item__desc">Recepción ordenada de pedidos, gestión de señas, control de saldos e historial de clientes.</p>
+                            </div>
+                        
+                            <div class="cap-item">
+                                <h4 class="cap-item__title">Cuaderno de Compra Mayorista</h4>
+                                <p class="cap-item__desc">Organización de listas de compra al mayorista para consolidar reposiciones y encargos.</p>
+                            </div>
+                        
+                            <div class="cap-item">
+                                <h4 class="cap-item__title">Cobros, Envíos y Promociones</h4>
+                                <p class="cap-item__desc">Mercado Pago y transferencias, envíos por código postal, rótulos QR/barras, cupones, packs y combos.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+
+                <div class="case-details-grid">
+                    <div class="case-panel">
+                        <span class="case-panel__label">Desafíos Técnicos y Foco de Arquitectura</span>
+                        <ul class="detail-list">
+                            <li><strong>Modelado de Variantes y Disponibilidad:</strong> Representar matrices de talle y color con stock independiente conviviendo con productos por encargo en un mismo catálogo.</li><li><strong>Ciclo de Vida Híbrido de Pedidos:</strong> Coordinar estados entre señas parciales, saldos pendientes, reposición mayorista y despacho.</li><li><strong>Integraciones Externas:</strong> Conexión con Mercado Pago, cotización de envíos por código postal y generación de rótulos con código de barras y QR.</li><li><strong>Experiencia Mobile-First:</strong> Flujo pensado para que el comercio cargue productos, gestione pedidos y emita rótulos desde el celular.</li>
+                        </ul>
+                    </div>
+                    <div class="case-panel">
+                        <span class="case-panel__label">Decisiones y Aprendizajes de Producto</span>
+                        <ul class="detail-list">
+                            <li><strong>Diseño Basado en Operación Real:</strong> Pensado alrededor de cómo venden hoy emprendedores y revendedores por WhatsApp, evitando fricción innecesaria.</li><li><strong>Seguimiento Sin Fricción:</strong> Link de seguimiento automático para cada cliente, reduciendo consultas repetitivas sin obligar a crear cuenta.</li><li><strong>Aprendizaje Clave:</strong> Para comercios chicos, reducir pasos operativos (señas, lista mayorista, rótulos) aporta mucho más valor que sumar personalización visual compleja.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <div class="secondary-cases">
+                <article class="case-feature reveal">
+                    <div class="case-feature__media">
+                        <img src="/assets/img/work-golero.jpg" alt="Captura de Golero, plataforma de reservas de canchas deportivas" loading="lazy" decoding="async" width="800" height="450">
+                    </div>
+                    <div class="case-feature__body">
+                        <div class="case-card__head">
+                            <div>
+                                <span class="case-card__badge">Producto y Operaciones · SaaS</span>
+                                <h3 class="case-card__title">Golero</h3>
+                                <p class="case-card__domain">Sports Tech · Reservas de Canchas</p>
+                            </div>
+                            <a href="https://golero.com.ar/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" aria-label="Visitar sitio: Golero">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                            </a>
+                        </div>
+
+                        <p class="case-card__summary">Plataforma SaaS que digitaliza clubes y complejos deportivos: búsqueda de canchas, disponibilidad en tiempo real, reservas online 24/7 y cobros con Mercado Pago.</p>
+
+                        <div class="case-card__blocks">
+                            <div>
+                                <p class="case-card__block-title">Problema</p>
+                                <p class="case-card__summary">Los clubes dependían de coordinación manual por WhatsApp, generando superposición de turnos, señas sin validar y fricción para los jugadores.</p>
+                            </div>
+                            <div>
+                                <p class="case-card__block-title">Producto y Modelado Operativo</p>
+                                <p class="case-card__summary">Modelado de agendas multideporte (fútbol, pádel, tenis, básquet, pickleball), disponibilidad en tiempo real y confirmación instantánea asociada al checkout de Mercado Pago.</p>
+                            </div>
+                            <div>
+                                <p class="case-card__block-title">Arquitectura y Ejecución</p>
+                                <p class="case-card__summary">Aplicación full stack con Next.js y TypeScript sobre Supabase, SEO orientado a búsqueda de clubes en CABA y GBA, y despliegue en producción.</p>
+                            </div>
+                        </div>
+
+                        <div class="case-card__tags">
+                            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Mercado Pago</span><span class="tag">SEO</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case-feature case-feature--reverse reveal">
+                    <div class="case-feature__media">
+                        <img src="/assets/img/work-fynta.jpg" alt="Captura de Fynta, SaaS de facturación electrónica para monotributistas" loading="lazy" decoding="async" width="800" height="450">
+                    </div>
+                    <div class="case-feature__body">
+                        <div class="case-card__head">
+                            <div>
+                                <span class="case-card__badge">Arquitectura y Sistemas · Fintech SaaS</span>
+                                <h3 class="case-card__title">Fynta</h3>
+                                <p class="case-card__domain">Facturación Electrónica · Plataforma Monorepo</p>
+                            </div>
+                            <a href="https://fynta.app/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" aria-label="Visitar sitio: Fynta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                            </a>
+                        </div>
+
+                        <p class="case-card__summary">Plataforma SaaS de facturación electrónica para monotributistas argentinos: emisión de comprobantes con CAE ante ARCA, control de tope de categoría y alertas preventivas.</p>
+
+                        <div class="arch-flow" aria-label="Fynta architecture layers">
+                            
+                                <div class="arch-flow__row">
+                                    <span class="arch-flow__layer">Monorepo</span>
+                                    <span class="arch-flow__detail">Nx Workspace</span>
+                                </div>
+                            
+                                <div class="arch-flow__row">
+                                    <span class="arch-flow__layer">Contratos</span>
+                                    <span class="arch-flow__detail">Esquemas Zod compartidos</span>
+                                </div>
+                            
+                                <div class="arch-flow__row">
+                                    <span class="arch-flow__layer">Backend API</span>
+                                    <span class="arch-flow__detail">NestJS · Patrón Billing Provider</span>
+                                </div>
+                            
+                                <div class="arch-flow__row">
+                                    <span class="arch-flow__layer">Clientes</span>
+                                    <span class="arch-flow__detail">Next.js (App Router) + React Native (Expo)</span>
+                                </div>
+                            
+                                <div class="arch-flow__row">
+                                    <span class="arch-flow__layer">Persistencia</span>
+                                    <span class="arch-flow__detail">PostgreSQL / Supabase (Repositorios de dominio)</span>
+                                </div>
+                            
+                        </div>
+
+                        <div class="case-card__blocks">
+                            <div>
+                                <p class="case-card__block-title">Problema</p>
+                                <p class="case-card__summary">Los monotributistas enfrentan portales fiscales complejos y el riesgo de superar el tope de su categoría sin visibilidad preventiva.</p>
+                            </div>
+                            <div>
+                                <p class="case-card__block-title">Arquitectura y Ejecución</p>
+                                <p class="case-card__summary">Monorepo Nx con contratos Zod compartidos y cliente HTTP tipado, API modular en NestJS usando el patrón Billing Provider para proveedores de facturación, y repositorios por dominio en PostgreSQL/Supabase.</p>
+                            </div>
+                        </div>
+
+                        <div class="case-card__tags">
+                            <span class="tag">TypeScript</span><span class="tag">NestJS</span><span class="tag">Next.js</span><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Nx</span><span class="tag">Zod</span><span class="tag">PostgreSQL</span><span class="tag">Supabase</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+        </section>
+
+        <section id="cases" class="section">
+            <div class="container" id="cases-content">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">04 / Historias Técnicas</span>
+            <h2 class="section-title">Cómo abordo decisiones de ingeniería</h2>
+            <p class="section-subtitle">Notas editoriales sobre trade-offs arquitectónicos y modernización de sistemas en producción.</p>
+        </div>
+
+        <div class="eng-cases-grid">
+            
+                <article class="eng-case-card reveal">
+                    <span class="eng-case-card__kicker">Arquitectura · Migración</span>
+                    <h3 class="eng-case-card__title">Migración incremental de React a Angular con Microfrontends</h3>
+                    <dl class="eng-case-dl">
+                        <div>
+                            <dt>Contexto</dt>
+                            <dd>Aplicaciones web corporativas en producción en Eldar con ciclos continuos de entrega.</dd>
+                        </div>
+                        <div>
+                            <dt>Problema</dt>
+                            <dd>Una reescritura completa frenaría el roadmap de negocio y aumentaría el riesgo de regresiones.</dd>
+                        </div>
+                        <div>
+                            <dt>Enfoque</dt>
+                            <dd>Convivencia de microfrontends React y Angular bajo límites claros de ruteo y composición.</dd>
+                        </div>
+                        <div>
+                            <dt>Decisión técnica</dt>
+                            <dd>Migrar módulos por dominio de forma incremental manteniendo los sistemas en producción sin cortes.</dd>
+                        </div>
+                        <div>
+                            <dt>Aprendizaje</dt>
+                            <dd>Las fronteras incrementales permiten entregar valor continuo mientras se moderniza la base.</dd>
+                        </div>
+                    </dl>
+                    <div class="arch-diagram" aria-label="Architecture diagram">
+                                
+                                    
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">Shell</span>
+                                        <span>App Host y Ruteo Compartido</span>
+                                    </div>
+                                
+                                    <span class="arch-diagram__arrow" aria-hidden="true">↓</span>
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">MFEs</span>
+                                        <span>Módulos Angular + Módulos React</span>
+                                    </div>
+                                
+                                    <span class="arch-diagram__arrow" aria-hidden="true">↓</span>
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">Base UI</span>
+                                        <span>Auth y Tokens Compartidos</span>
+                                    </div>
+                                
+                               </div>
+                </article>
+            
+                <article class="eng-case-card reveal">
+                    <span class="eng-case-card__kicker">Design Systems · Web Components</span>
+                    <h3 class="eng-case-card__title">Biblioteca de componentes multi-framework con Stencil.js y Nexus</h3>
+                    <dl class="eng-case-dl">
+                        <div>
+                            <dt>Contexto</dt>
+                            <dd>Múltiples equipos trabajando en microfrontends Angular y React con necesidad de consistencia visual.</dd>
+                        </div>
+                        <div>
+                            <dt>Problema</dt>
+                            <dd>Duplicar componentes por framework generaba inconsistencias y doble mantenimiento.</dd>
+                        </div>
+                        <div>
+                            <dt>Enfoque</dt>
+                            <dd>Encapsular primitivas UI como Web Components agnósticos compilados con Stencil.js.</dd>
+                        </div>
+                        <div>
+                            <dt>Decisión técnica</dt>
+                            <dd>Estandarizar la capa UI en Web Components publicados y versionados en Nexus en lugar de kits paralelos.</dd>
+                        </div>
+                        <div>
+                            <dt>Aprendizaje</dt>
+                            <dd>El versionado estricto y las primitivas estándar escalan mejor que las librerías acopladas a un framework.</dd>
+                        </div>
+                    </dl>
+                    <div class="arch-diagram" aria-label="Architecture diagram">
+                                
+                                    
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">Origen</span>
+                                        <span>Stencil.js Web Components</span>
+                                    </div>
+                                
+                                    <span class="arch-diagram__arrow" aria-hidden="true">↓</span>
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">Registro</span>
+                                        <span>Paquetes Versionados en Nexus</span>
+                                    </div>
+                                
+                                    <span class="arch-diagram__arrow" aria-hidden="true">↓</span>
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">Consumo</span>
+                                        <span>Microfrontends Angular y React</span>
+                                    </div>
+                                
+                               </div>
+                </article>
+            
+                <article class="eng-case-card reveal">
+                    <span class="eng-case-card__kicker">Monorepo · Contratos Tipados</span>
+                    <h3 class="eng-case-card__title">Contratos compartidos con Zod entre NestJS, Next.js y React Native</h3>
+                    <dl class="eng-case-dl">
+                        <div>
+                            <dt>Contexto</dt>
+                            <dd>Desarrollo simultáneo de web, mobile y API en Fynta.</dd>
+                        </div>
+                        <div>
+                            <dt>Problema</dt>
+                            <dd>La desincronización de esquemas entre backend y clientes ralentiza la iteración y genera errores en runtime.</dd>
+                        </div>
+                        <div>
+                            <dt>Enfoque</dt>
+                            <dd>Monorepo Nx con tipos TypeScript, esquemas Zod compartidos y cliente HTTP tipado.</dd>
+                        </div>
+                        <div>
+                            <dt>Decisión técnica</dt>
+                            <dd>Validar con una única fuente de verdad en el borde en lugar de duplicar DTOs.</dd>
+                        </div>
+                        <div>
+                            <dt>Aprendizaje</dt>
+                            <dd>Los contratos compartidos detectan cambios incompatibles en compilación antes de llegar a producción.</dd>
+                        </div>
+                    </dl>
+                    <div class="arch-diagram" aria-label="Architecture diagram">
+                                
+                                    
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">Contratos</span>
+                                        <span>Monorepo Nx · Esquemas Zod</span>
+                                    </div>
+                                
+                                    <span class="arch-diagram__arrow" aria-hidden="true">↓</span>
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">Backend</span>
+                                        <span>API NestJS + Billing Provider</span>
+                                    </div>
+                                
+                                    <span class="arch-diagram__arrow" aria-hidden="true">↓</span>
+                                    <div class="arch-diagram__step">
+                                        <span class="arch-diagram__role">Clientes</span>
+                                        <span>Web Next.js + React Native (Expo)</span>
+                                    </div>
+                                
+                               </div>
+                </article>
+            
+        </div>
+    </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container" id="contact-content">
+        <div class="contact-box reveal">
+            <div>
+                <span class="section-eyebrow">05 / Contacto</span>
+                <h2 class="contact-box__title">Let&#39;s build something meaningful.</h2>
+                <p class="contact-box__subtitle">Estoy abierto a oportunidades donde pueda aportar construyendo, evolucionando y escalando productos de software.</p>
+                <div class="contact-box__actions">
+                    <a href="mailto:diegooviedo155@gmail.com" class="btn btn--primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Enviar email
+                    </a>
+                    <button type="button" id="copy-email-btn" class="btn btn--secondary" data-copy-label="Copiar email" data-copied-label="Copiado al portapapeles">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> <span>Copiar email</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="contact-links">
+                
+                    <a href="mailto:diegooviedo155@gmail.com"  class="contact-link-card">
+                        <div>
+                            <div class="contact-link-card__label">Email</div>
+                            <div class="contact-link-card__value">diegooviedo155@gmail.com</div>
+                        </div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                
+                    <a href="https://www.linkedin.com/in/diego-alejandro-oviedo/" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+                        <div>
+                            <div class="contact-link-card__label">LinkedIn</div>
+                            <div class="contact-link-card__value">/in/diego-alejandro-oviedo</div>
+                        </div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                
+                    <a href="https://github.com/diegooviedo155" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+                        <div>
+                            <div class="contact-link-card__label">GitHub</div>
+                            <div class="contact-link-card__value">@diegooviedo155</div>
+                        </div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__inner">
+            <p class="footer__meta" id="footer-rights">© 2026 Diego Alejandro Oviedo. Desarrollado con HTML semántico, JS modular y sin librerías pesadas.</p>
+            <nav class="footer__nav" id="footer-nav" aria-label="Navegación del pie">
+        <a href="#profile">Capacidades</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#projects">Casos de estudio</a>
+        <a href="#cases">Ingeniería</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="/assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 /**
- * @fileoverview Pure DOM rendering helpers and reusable SVG icons.
- * Keeps presentation cleanly separated from content data.
+ * @fileoverview Pure HTML builders and DOM rendering wrappers.
+ * Shared between browser hydration (app.js) and static prerendering (scripts/prerender.mjs).
  */
 
 import { PROFILE_META } from '../data/portfolio-data.js';
@@ -10,7 +10,7 @@ import { PROFILE_META } from '../data/portfolio-data.js';
  * @param {string} value
  * @returns {string}
  */
-function esc(value) {
+export function esc(value) {
     return String(value)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -30,44 +30,37 @@ export const ICONS = {
     file: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>`
 };
 
-/**
- * Renders navigation links for both desktop nav and mobile drawer.
- * @param {Record<string, string>} navCopy
- */
-export function renderNav(navCopy) {
-    const items = [
+export function buildNavItems(navCopy) {
+    return [
         { href: '#profile', label: navCopy.profile },
         { href: '#experience', label: navCopy.experience },
         { href: '#projects', label: navCopy.projects },
         { href: '#cases', label: navCopy.cases },
         { href: '#contact', label: navCopy.contact }
     ];
-
-    const desktopEl = document.getElementById('nav-links');
-    const mobileEl = document.getElementById('mobile-drawer-links');
-
-    if (desktopEl) {
-        desktopEl.innerHTML = items
-            .map((item) => `<a href="${item.href}" class="nav__link">${esc(item.label)}</a>`)
-            .join('');
-    }
-
-    if (mobileEl) {
-        mobileEl.innerHTML = items
-            .map((item) => `<a href="${item.href}" class="mobile-drawer__link">${esc(item.label)}</a>`)
-            .join('');
-    }
 }
 
-/**
- * Renders Hero section.
- * @param {any} hero
- */
-export function renderHero(hero) {
-    const root = document.getElementById('hero-content');
-    if (!root) return;
+export function buildNavDesktopHtml(navCopy) {
+    return buildNavItems(navCopy)
+        .map((item) => `<a href="${item.href}" class="nav__link">${esc(item.label)}</a>`)
+        .join('');
+}
 
-    root.innerHTML = `
+export function buildNavMobileHtml(navCopy) {
+    return buildNavItems(navCopy)
+        .map((item) => `<a href="${item.href}" class="mobile-drawer__link">${esc(item.label)}</a>`)
+        .join('');
+}
+
+export function renderNav(navCopy) {
+    const desktopEl = document.getElementById('nav-links');
+    const mobileEl = document.getElementById('mobile-drawer-links');
+    if (desktopEl) desktopEl.innerHTML = buildNavDesktopHtml(navCopy);
+    if (mobileEl) mobileEl.innerHTML = buildNavMobileHtml(navCopy);
+}
+
+export function buildHeroHtml(hero) {
+    return `
         <div class="hero__grid">
             <div>
                 <div class="hero__status">
@@ -139,14 +132,12 @@ export function renderHero(hero) {
     `;
 }
 
-/**
- * Renders Engineering Profile (7 strategic disciplines, badge-free editorial typography).
- * @param {any} profile
- */
-export function renderProfile(profile) {
-    const root = document.getElementById('profile-content');
-    if (!root) return;
+export function renderHero(hero) {
+    const root = document.getElementById('hero-content');
+    if (root) root.innerHTML = buildHeroHtml(hero);
+}
 
+export function buildProfileHtml(profile) {
     const primaryDomains = profile.domains.filter((d) => d.primary);
     const secondaryDomains = profile.domains.filter((d) => !d.primary);
 
@@ -168,7 +159,7 @@ export function renderProfile(profile) {
         </article>
     `;
 
-    root.innerHTML = `
+    return `
         <div class="section-header reveal">
             <span class="section-eyebrow">${esc(profile.eyebrow)}</span>
             <h2 class="section-title">${esc(profile.title)}</h2>
@@ -184,15 +175,13 @@ export function renderProfile(profile) {
     `;
 }
 
-/**
- * Renders Professional Experience timeline.
- * @param {any} experience
- */
-export function renderExperience(experience) {
-    const root = document.getElementById('experience-content');
-    if (!root) return;
+export function renderProfile(profile) {
+    const root = document.getElementById('profile-content');
+    if (root) root.innerHTML = buildProfileHtml(profile);
+}
 
-    root.innerHTML = `
+export function buildExperienceHtml(experience) {
+    return `
         <div class="section-header reveal">
             <span class="section-eyebrow">${esc(experience.eyebrow)}</span>
             <h2 class="section-title">${esc(experience.title)}</h2>
@@ -248,17 +237,15 @@ export function renderExperience(experience) {
     `;
 }
 
-/**
- * Renders Selected Projects (Tandi Flagship + Golero & Fynta Case Studies).
- * @param {any} projects
- */
-export function renderProjects(projects) {
-    const root = document.getElementById('projects-content');
-    if (!root) return;
+export function renderExperience(experience) {
+    const root = document.getElementById('experience-content');
+    if (root) root.innerHTML = buildExperienceHtml(experience);
+}
 
+export function buildProjectsHtml(projects) {
     const { tandi, golero, fynta, labels } = projects;
 
-    root.innerHTML = `
+    return `
         <div class="section-header reveal">
             <span class="section-eyebrow">${esc(projects.eyebrow)}</span>
             <h2 class="section-title">${esc(projects.title)}</h2>
@@ -266,7 +253,6 @@ export function renderProjects(projects) {
         </div>
 
         <div class="case-stack">
-            <!-- Flagship Case Study: Tandi -->
             <article class="flagship-case reveal" aria-labelledby="tandi-heading">
                 <div class="flagship-case__top">
                     <div>
@@ -355,7 +341,6 @@ export function renderProjects(projects) {
                 </div>
             </article>
 
-            <!-- Distinct Case Studies: Golero (Product & Ops) & Fynta (Architecture & Monorepo) -->
             <div class="secondary-cases">
                 <article class="case-feature reveal">
                     <div class="case-feature__media">
@@ -448,17 +433,15 @@ export function renderProjects(projects) {
     `;
 }
 
-/**
- * Renders Engineering Stories section (Context -> Problem -> Approach -> Decision -> Takeaway).
- * @param {any} casesData
- */
-export function renderEngineeringCases(casesData) {
-    const root = document.getElementById('cases-content');
-    if (!root) return;
+export function renderProjects(projects) {
+    const root = document.getElementById('projects-content');
+    if (root) root.innerHTML = buildProjectsHtml(projects);
+}
 
+export function buildEngineeringCasesHtml(casesData) {
     const { labels, items } = casesData;
 
-    root.innerHTML = `
+    return `
         <div class="section-header reveal">
             <span class="section-eyebrow">${esc(casesData.eyebrow)}</span>
             <h2 class="section-title">${esc(casesData.title)}</h2>
@@ -519,15 +502,13 @@ export function renderEngineeringCases(casesData) {
     `;
 }
 
-/**
- * Renders Contact section with copy-email support.
- * @param {any} contact
- */
-export function renderContact(contact) {
-    const root = document.getElementById('contact-content');
-    if (!root) return;
+export function renderEngineeringCases(casesData) {
+    const root = document.getElementById('cases-content');
+    if (root) root.innerHTML = buildEngineeringCasesHtml(casesData);
+}
 
-    root.innerHTML = `
+export function buildContactHtml(contact) {
+    return `
         <div class="contact-box reveal">
             <div>
                 <span class="section-eyebrow">${esc(contact.eyebrow)}</span>
@@ -562,10 +543,21 @@ export function renderContact(contact) {
     `;
 }
 
-/**
- * Renders Footer.
- * @param {any} copy
- */
+export function renderContact(contact) {
+    const root = document.getElementById('contact-content');
+    if (root) root.innerHTML = buildContactHtml(contact);
+}
+
+export function buildFooterNavHtml(navCopy) {
+    return `
+        <a href="#profile">${esc(navCopy.profile)}</a>
+        <a href="#experience">${esc(navCopy.experience)}</a>
+        <a href="#projects">${esc(navCopy.projects)}</a>
+        <a href="#cases">${esc(navCopy.cases)}</a>
+        <a href="#contact">${esc(navCopy.contact)}</a>
+    `;
+}
+
 export function renderFooter(copy) {
     const rightsEl = document.getElementById('footer-rights');
     const navEl = document.getElementById('footer-nav');
@@ -575,12 +567,6 @@ export function renderFooter(copy) {
     }
 
     if (navEl) {
-        navEl.innerHTML = `
-            <a href="#profile">${esc(copy.nav.profile)}</a>
-            <a href="#experience">${esc(copy.nav.experience)}</a>
-            <a href="#projects">${esc(copy.nav.projects)}</a>
-            <a href="#cases">${esc(copy.nav.cases)}</a>
-            <a href="#contact">${esc(copy.nav.contact)}</a>
-        `;
+        navEl.innerHTML = buildFooterNavHtml(copy.nav);
     }
 }

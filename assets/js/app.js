@@ -1,7 +1,7 @@
 /**
  * @fileoverview Portfolio application entry point.
- * Coordinates locale state (EN/ES), dark-first theme toggle, scrollspy,
- * mobile drawer accessibility, copy-email feedback, and IntersectionObserver reveals.
+ * Hydrates prerendered static HTML (/ and /es/), coordinates dark-first theme toggle,
+ * mobile drawer accessibility, copy-email feedback, scrollspy, and reveal animations.
  */
 
 import { PORTFOLIO_COPY, PROFILE_META } from './data/portfolio-data.js';
@@ -18,7 +18,6 @@ import {
 } from './components/renderers.js';
 
 const STORAGE_KEYS = {
-    locale: 'portfolio_locale',
     theme: 'portfolio_theme'
 };
 
@@ -49,10 +48,7 @@ function storageSet(key, value) {
 }
 
 /** @type {'en' | 'es'} */
-let currentLocale = (() => {
-    const saved = storageGet(STORAGE_KEYS.locale);
-    return saved === 'es' || saved === 'en' ? saved : 'en';
-})();
+let currentLocale = document.documentElement.lang === 'es' ? 'es' : 'en';
 
 /** @type {IntersectionObserver | null} */
 let revealObserver = null;
@@ -60,11 +56,6 @@ let revealObserver = null;
 /** @type {IntersectionObserver | null} */
 let spyObserver = null;
 
-/**
- * Updates document title, meta description, Open Graph, Twitter, and skip link for the active locale.
- * @param {any} meta
- * @param {'en' | 'es'} locale
- */
 function syncMetadata(meta, locale) {
     if (!meta) return;
     document.title = meta.title;
@@ -92,8 +83,15 @@ function syncMetadata(meta, locale) {
 }
 
 /**
- * Renders all sections for the active locale and re-binds dynamic handlers.
+ * Attaches interactive behaviors to either prerendered or freshly rendered DOM.
  */
+function hydrateInteractions() {
+    bindCopyEmail();
+    bindMobileLinks();
+    setupRevealObserver();
+    setupScrollSpy();
+}
+
 function renderAll() {
     const copy = PORTFOLIO_COPY[currentLocale];
     document.documentElement.lang = currentLocale;
@@ -108,19 +106,7 @@ function renderAll() {
     renderContact(copy.contact);
     renderFooter(copy);
 
-    const langBtn = document.getElementById('lang-toggle');
-    if (langBtn) {
-        langBtn.textContent = currentLocale === 'en' ? 'ES' : 'EN';
-        langBtn.setAttribute(
-            'aria-label',
-            currentLocale === 'en' ? 'Switch language to Spanish' : 'Cambiar idioma a inglés'
-        );
-    }
-
-    bindCopyEmail();
-    bindMobileLinks();
-    setupRevealObserver();
-    setupScrollSpy();
+    hydrateInteractions();
 }
 
 function bindCopyEmail() {
@@ -161,7 +147,7 @@ function setupTheme() {
             root.removeAttribute('data-theme');
         }
         if (logoImg) {
-            logoImg.setAttribute('src', isLight ? './assets/img/logo.png' : './assets/img/logo2.png');
+            logoImg.setAttribute('src', isLight ? '/assets/img/logo.png' : '/assets/img/logo2.png');
         }
         if (themeMeta) {
             themeMeta.setAttribute('content', isLight ? '#fafafa' : '#09090b');
@@ -184,17 +170,6 @@ function setupTheme() {
             storageSet(STORAGE_KEYS.theme, next);
         });
     }
-}
-
-function setupLanguageToggle() {
-    const langBtn = document.getElementById('lang-toggle');
-    if (!langBtn) return;
-
-    langBtn.addEventListener('click', () => {
-        currentLocale = currentLocale === 'en' ? 'es' : 'en';
-        storageSet(STORAGE_KEYS.locale, currentLocale);
-        renderAll();
-    });
 }
 
 function setDrawerState(isOpen) {
@@ -306,7 +281,11 @@ function setupScrollSpy() {
 
 document.addEventListener('DOMContentLoaded', () => {
     setupTheme();
-    setupLanguageToggle();
     setupMobileDrawer();
-    renderAll();
+
+    if (document.documentElement.dataset.prerendered === currentLocale) {
+        hydrateInteractions();
+    } else {
+        renderAll();
+    }
 });
