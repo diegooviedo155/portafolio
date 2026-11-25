@@ -306,7 +306,7 @@ export function renderProjects(projects) {
                                 (shot) => `
                             <figure class="screenshot-card">
                                 <div class="screenshot-card__media">
-                                    <img src="${shot.image}" alt="${esc(shot.alt)}" loading="lazy" width="1440" height="900">
+                                    <img src="${shot.image}" alt="${esc(shot.alt)}" loading="lazy" decoding="async" width="1440" height="900">
                                 </div>
                                 <figcaption class="screenshot-card__caption">
                                     <span class="screenshot-card__title">${esc(shot.title)}</span>
@@ -359,7 +359,7 @@ export function renderProjects(projects) {
             <div class="secondary-cases">
                 <article class="case-feature reveal">
                     <div class="case-feature__media">
-                        <img src="${golero.image}" alt="${esc(golero.alt)}" loading="lazy" width="800" height="450">
+                        <img src="${golero.image}" alt="${esc(golero.alt)}" loading="lazy" decoding="async" width="800" height="450">
                     </div>
                     <div class="case-feature__body">
                         <div class="case-card__head">
@@ -398,7 +398,7 @@ export function renderProjects(projects) {
 
                 <article class="case-feature case-feature--reverse reveal">
                     <div class="case-feature__media">
-                        <img src="${fynta.image}" alt="${esc(fynta.alt)}" loading="lazy" width="800" height="450">
+                        <img src="${fynta.image}" alt="${esc(fynta.alt)}" loading="lazy" decoding="async" width="800" height="450">
                     </div>
                     <div class="case-feature__body">
                         <div class="case-card__head">

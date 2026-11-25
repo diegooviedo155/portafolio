@@ -135,7 +135,9 @@ function bindCopyEmail() {
             await navigator.clipboard.writeText(PROFILE_META.email);
             btn.innerHTML = `${ICONS.check} <span>${copiedLabel}</span>`;
             setTimeout(() => {
-                btn.innerHTML = `${ICONS.copy} <span>${copyLabel}</span>`;
+                if (btn.isConnected) {
+                    btn.innerHTML = `${ICONS.copy} <span>${copyLabel}</span>`;
+                }
             }, 2200);
         } catch {
             window.location.href = `mailto:${PROFILE_META.email}`;
@@ -202,6 +204,7 @@ function setDrawerState(isOpen) {
 
     drawer.classList.toggle('is-open', isOpen);
     drawer.setAttribute('aria-hidden', String(!isOpen));
+    drawer.inert = !isOpen;
     toggle.setAttribute('aria-expanded', String(isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
 }
