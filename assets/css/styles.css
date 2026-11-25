@@ -1195,6 +1195,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 1.125rem;
+    min-width: 0;
 }
 
 .case-card__head {
@@ -1299,8 +1300,10 @@ img {
     font-size: 0.72rem;
     line-height: 1.55;
     color: var(--text-secondary);
+    max-width: 100%;
     overflow-x: auto;
-    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 /* ==========================================================================
@@ -1313,9 +1316,9 @@ img {
     gap: 1.25rem;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 960px) {
     .eng-cases-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
@@ -1327,6 +1330,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    min-width: 0;
 }
 
 .eng-case-card__kicker {
